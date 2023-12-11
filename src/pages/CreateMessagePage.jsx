@@ -1,6 +1,15 @@
 import styled from 'styled-components';
 import ToggleArrow from '../assets/images/toggle-arrow-down.svg';
-
+// textarea 메뉴
+import TextBold from '../assets/images/text-bold.svg';
+import TextItalic from '../assets/images/text-italic.svg';
+import TextUnderlined from '../assets/images/text-underlined.svg';
+import AlignmentBoth from '../assets/images/alignment-both.svg';
+import AlignmentRight from '../assets/images/alignment-right.svg';
+import AlignmentCenter from '../assets/images/alignment-center.svg';
+import UnorderedList from '../assets/images/unordered-list.svg';
+import OrderedList from '../assets/images/ordered-list.svg';
+import FontIcon from '../assets/images/font.svg';
 // 지선
 
 const StyledContainer = styled.div`
@@ -10,7 +19,7 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 50px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `;
 
 const StyledSection = styled.section`
@@ -33,7 +42,8 @@ const StyledSection = styled.section`
     border: 1px solid #ccc;
   }
 
-  & input:focus {
+  & input:focus,
+  & textarea:focus {
     border: 2px solid #555;
   }
 
@@ -59,6 +69,10 @@ const StyledSection = styled.section`
     color: #555;
   }
 
+  & li:hover {
+    background-color: #f6f6f6;
+  }
+
   & ul {
     width: 320px;
     padding-top: 10px;
@@ -66,6 +80,31 @@ const StyledSection = styled.section`
     border: 1px solid #ccc;
     border-radius: 8px;
   }
+
+  & textarea {
+    position: relative;
+    width: 720px;
+    height: 260px;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+`;
+
+const TextSettingBar = styled.div`
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 12px 15px;
+  width: 718px;
+  height: 49px;
+  border-radius: 8px 8px 0px 0px;
+  background-color: #eee;
+  gap: 14px;
 `;
 
 const StyledButton = styled.button`
@@ -112,6 +151,25 @@ const CreateMessagePage = () => {
 
         <StyledSection>
           <label htmlFor="content">내용을 입력해 주세요</label>
+          <TextSettingBar>
+            <div>
+              <img src={TextBold} alt="bold" />
+              <img src={TextItalic} alt="italic" />
+              <img src={TextUnderlined} alt="underlined" />
+            </div>
+            <div>
+              <img src={AlignmentCenter} alt="alignment center" />
+              <img src={AlignmentRight} alt="alignmnet right" />
+              <img src={AlignmentBoth} alt="alignment both" />
+            </div>
+            <div>
+              <img src={UnorderedList} alt="unordered list" />
+              <img src={OrderedList} alt="ordered list" />
+            </div>
+            <div>
+              <img src={FontIcon} alt="font icon" />
+            </div>
+          </TextSettingBar>
           <textarea id="content" />
         </StyledSection>
 

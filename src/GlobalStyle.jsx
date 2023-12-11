@@ -120,14 +120,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input,
-  button{
+  button,
+  textarea {
     border:none;
   }
   
   input:focus,
   input:active,
   button:focus,
-  button:active {
+  button:active,
+  textarea:focus,
+  textarea:active {
     outline: none;
     box-shadow: none;
   }
