@@ -1,14 +1,12 @@
-import Icon from '../assets/images/Icon.png';
-import { Header, HeaderFont, HeaderGap } from './HeaderCss/MessageListPageCss';
+import HeaderUser from './HeaderCss/layoutTest/Header_service';
+import Headers from './MessageListPage/Header';
 
 const MessageListPage = () => {
   return (
-    <Header>
-      <HeaderGap>
-        <img src={Icon} alt="로고" />
-        <HeaderFont>Rolling</HeaderFont>
-      </HeaderGap>
-    </Header>
+    <div>
+      <Headers />
+      <HeaderUser />
+    </div>
   );
 };
 

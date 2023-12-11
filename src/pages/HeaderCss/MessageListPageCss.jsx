@@ -23,5 +23,3 @@ export const HeaderFont = styled.h1`
   font-weight: 700;
   line-height: normal;
 `;
-
-// export default { Header, HeaderGap };
