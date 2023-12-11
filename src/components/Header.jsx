@@ -63,7 +63,6 @@ const StyledHr = styled.hr`
 `;
 
 const Header = ({ hidden }) => {
-  console.log(hidden);
   return (
     <>
       <StyledDiv className={hidden}>
