@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import HeaderLogo from '../assets/images/HeaderLogo.svg';
 
 const StyledDiv = styled.div`
+  display: flex;
   justify-content: center;
   align-items: center;
 
-  &,
-  .true {
+  &.true {
     @media (max-width: 767px) {
       display: none;
     }
@@ -46,7 +46,7 @@ const StyledLink = styled(Link)`
     background: #fff;
   }
   & p {
-    color: var(--gray-light-gray-90, #4a494f);
+    color: #4a494f;
     text-align: center;
     font-family: Poppins;
     font-size: 19.971px;
