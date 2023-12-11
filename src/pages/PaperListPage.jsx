@@ -3,7 +3,7 @@ import Header from '../components/Header';
 const PaperListPage = () => {
   return (
     <>
-      <Header hidden="true" />
+      <Header hidden="false" />
       <div>PaperListPage</div>
     </>
   );
