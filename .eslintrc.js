@@ -25,8 +25,10 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'no-unused-vars': 'warn',
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
     'react/function-component-definition': [
       2,
       { namedComponents: 'arrow-function' },

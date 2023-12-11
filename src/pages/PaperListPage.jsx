@@ -1,5 +1,12 @@
+import Header from '../components/Header';
+
 const PaperListPage = () => {
-  return <div>PaperListPage</div>;
+  return (
+    <>
+      <Header hidden="true" />
+      <div>PaperListPage</div>
+    </>
+  );
 };
 
 export default PaperListPage;
