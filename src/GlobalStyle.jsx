@@ -118,6 +118,19 @@ const GlobalStyle = createGlobalStyle`
   a:hover {
     cursor: pointer;
   }
+
+  input,
+  button{
+    border:none;
+  }
+  
+  input:focus,
+  input:active,
+  button:focus,
+  button:active {
+    outline: none;
+    box-shadow: none;
+  }
 `;
 
 export default GlobalStyle;
