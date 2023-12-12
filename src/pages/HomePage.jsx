@@ -1,6 +1,6 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { Link } from 'react-router-dom';
 import Emoji from '../assets/images/home-emoji.png';
 import Rolling from '../assets/images/home-rolling.png';
 
@@ -18,7 +18,9 @@ const HomePage = () => {
             </Title>
             <Description>로그인 없이 자유롭게 만들어요.</Description>
           </div>
-          <RollingImage src={Rolling} />
+          <ImageScroller>
+            <RollingImage src={Rolling} />
+          </ImageScroller>
         </FirstBanner>
         <SecondBanner>
           <EmojiImage src={Emoji} />
@@ -103,10 +105,31 @@ const LinkButton = styled(Link)`
   }
 `;
 
-const RollingImage = styled.img`
+const ImageScroller = styled.div`
   width: 640px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   @media screen and (max-width: 1200px) {
     margin: 0 auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const RollingImage = styled.img`
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    width: 354px;
   }
 `;
 
@@ -118,7 +141,7 @@ const EmojiImage = styled.img`
   }
 
   @media screen and (max-width: 768px) {
-    width: 100%;
+    width: 80%;
   }
 `;
 
