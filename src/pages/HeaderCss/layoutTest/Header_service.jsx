@@ -1,6 +1,7 @@
 import ArrowDown from '../../../assets/images/arrow_down.png';
 import ArrowAdd from '../../../assets/images/add-24.png';
 import Share from '../../../assets/images/share-24.png';
+import Data from '../../../mock.json';
 import {
   HeaderService,
   HeaderServiceBifurcationA,
@@ -8,23 +9,33 @@ import {
   HeaderServiceEmojiList,
   HeaderServiceEmojiAdd,
   HeaderServiceEmojiButton,
-  HeaderServiceName,
+  HeaderServiceNameGap,
   HeaderServiceURLButton,
   HeaderServiceEmoji,
+  // HeaderServiceImg,
+  // HeaderServiceMessageCount,
+  HeaderServiceMessageCountText,
+  HeaderServiceName,
 } from '../MessageListPageCss';
 
 // 엄지,눈하트,폭죽 플렉스 겹쳐지게 설정해야함.
 // 그럼 gap잡힌 레이아웃도 사라질것.
 const HeaderUser = () => {
+  const { count } = Data;
+
   return (
     <HeaderService>
-      <HeaderServiceName>
-        <h2>To.Name</h2>
-        <p>이미지여러개</p>
-      </HeaderServiceName>
-      <p>
-        <b>23</b>명이 작성했어요!
-      </p>
+      <HeaderServiceNameGap>
+        <HeaderServiceName>To.{count}</HeaderServiceName>
+        {/* <HeaderServiceImg src={profileImageURL1} alt="프로필이미지" /> */}
+      </HeaderServiceNameGap>
+      {/* <HeaderServiceImg src={profileImageURL2} alt="프로필이미지" /> */}
+
+      {/* <HeaderServiceMessageCount>{messageCount}</HeaderServiceMessageCount> */}
+      <HeaderServiceMessageCountText>
+        명이 작성했어요!
+      </HeaderServiceMessageCountText>
+
       <HeaderServiceBifurcationA />
       <HeaderServiceEmojiList>
         <HeaderServiceEmoji>24</HeaderServiceEmoji>

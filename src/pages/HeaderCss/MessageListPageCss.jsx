@@ -31,12 +31,55 @@ export const HeaderService = styled.div`
   padding: 13px 360px;
   align-items: center;
 `;
-export const HeaderServiceName = styled.div`
+export const HeaderServiceNameGap = styled.div`
   display: flex;
   align-items: center;
   gap: 263px;
-  margin-right: 11px;
 `;
+
+/// 여기서 부터 목데이터구간 수정 필요함.
+
+export const HeaderServiceName = styled.h1`
+  color: var(--gray-800, #2b2b2b);
+  width: 227px;
+
+  /* Font/28 Bold */
+  font-family: Pretendard;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 42px; /* 150% */
+  letter-spacing: -0.28px;
+`;
+
+export const HeaderServiceImg = styled.img`
+  display: flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  flex-shrink: 0;
+`;
+
+export const HeaderServiceMessageCount = styled.p`
+  color: var(--gray-900, #181818);
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px; /* 150% */
+  margin-left: 11px;
+`;
+
+export const HeaderServiceMessageCountText = styled.p`
+  color: var(--gray-900, #181818);
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+`;
+
+// 여기까지 목데이터 구간 수정 필요함
 
 export const HeaderServiceBifurcationA = styled.div`
   width: 1px;
