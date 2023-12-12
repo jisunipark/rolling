@@ -67,6 +67,7 @@ const StyledSection = styled.section`
     padding: 16px;
     border-radius: 8px;
     border: 1px solid #ccc;
+    resize: none;
   }
 `;
 
