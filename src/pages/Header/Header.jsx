@@ -1,5 +1,5 @@
 import Icon from '../../assets/images/Icon.png';
-import { Header, HeaderFont, HeaderGap } from '../HeaderCss/MessageListPageCss';
+import { Header, HeaderFont, HeaderGap } from './MessageListPageCss';
 
 const Headers = () => {
   return (

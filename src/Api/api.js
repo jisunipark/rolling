@@ -10,3 +10,7 @@ const FetchBackGround = async () => {
 };
 
 export default FetchBackGround;
+
+// const FetchMockData = async () => {
+//   const response = await fetch(``)
+// }
