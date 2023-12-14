@@ -18,6 +18,22 @@ const Modal = () => {
           </WriterArea>
           <Date>2023.07.08</Date>
         </ModalHeader>
+        <hr />
+        <ModalContents>
+          코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또
+          하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심
+          또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두
+          조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력
+          모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강,
+          체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요.
+          코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또
+          하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심
+          또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두
+          조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력
+          모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강,
+          체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요.
+        </ModalContents>
+        <ModalButton>확인</ModalButton>
       </Container>
     </Wrapper>
   );
@@ -40,9 +56,18 @@ const Container = styled.div`
   width: 600px;
   height: 476px;
   background-color: #fff;
-  flex-shrink: 0;
   border-radius: 16px;
   padding: 40px;
+
+  & hr {
+    margin-top: 20px;
+    margin-bottom: 16px;
+    border: 1px solid #eee;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 const ModalHeader = styled.div`
@@ -91,6 +116,48 @@ const Date = styled.div`
   font-weight: 400;
   line-height: 20px;
   letter-spacing: -0.07px;
+`;
+
+const ModalContents = styled.div`
+  width: 520px;
+  height: 240px;
+  color: #5a5a5a;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.18px;
+  overflow-y: auto;
+  scrollbar-width: 4px;
+
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    background-clip: padding-box;
+    border-left: 16px solid transparent;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const ModalButton = styled.button`
+  display: block;
+  width: 120px;
+  padding: 7px 16px;
+  border-radius: 6px;
+  background-color: #9935ff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.16px;
+  border: none;
+  margin: 0 auto;
+  margin-top: 24px;
 `;
 
 export default Modal;
