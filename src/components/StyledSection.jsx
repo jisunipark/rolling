@@ -34,6 +34,14 @@ const StyledSection = styled.section`
     text-align: left;
   }
 
+  & input {
+    width: 100%;
+  }
+
+  & input.error {
+    border: 1px solid #dc3a3a;
+  }
+
   & button {
     display: flex;
     justify-content: space-between;
@@ -58,6 +66,18 @@ const StyledSection = styled.section`
     border: 1px solid #ccc;
     border-radius: 8px;
     /* display: none; */
+  }
+
+  & p {
+    display: none;
+    &.error {
+      display: block;
+      margin-top: 4px;
+      color: #dc3a3a;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+    }
   }
 
   & textarea {

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import TextInputSection from '../components/TextInputSection';
 import ProfileImgInputSection from '../components/ProfileImgInputSection';
 import TextareaInputSection from '../components/TextareaInputSection';
@@ -38,7 +39,9 @@ const CreateMessagePage = () => {
         <TextareaInputSection>내용을 입력해 주세요</TextareaInputSection>
         <ToggleDownSection options="font">폰트 선택</ToggleDownSection>
       </StyledContainer>
-      <StyledButton>생성하기</StyledButton>
+      <Link to="/post/{id}">
+        <StyledButton>생성하기</StyledButton>
+      </Link>
     </div>
   );
 };

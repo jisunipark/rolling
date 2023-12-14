@@ -31,7 +31,7 @@ const ToggleDownSection = ({ children, options }) => {
     <StyledSection>
       <label htmlFor={options}>{children}</label>
       <button type="button" onClick={handleOptions}>
-        [지인]
+        지인
         <img src={ToggleArrow} alt="드롭다운 화살표 이미지" />
       </button>
       {isOpen && (
