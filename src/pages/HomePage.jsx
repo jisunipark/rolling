@@ -1,42 +1,49 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import Header from '../components/Header';
+
 import Emoji from '../assets/images/home-emoji.png';
 import Rolling from '../assets/images/home-rolling.png';
 
 const HomePage = () => {
   return (
-    <Wrapper>
-      <Container>
-        <FirstBanner>
-          <div>
-            <Point>Point. 01</Point>
-            <Title>
-              누구나 손쉽게, 온라인
-              <LineBreak />
-              롤링 페이퍼를 만들 수 있어요
-            </Title>
-            <Description>로그인 없이 자유롭게 만들어요.</Description>
-          </div>
-          <ImageScroller>
-            <RollingImage src={Rolling} />
-          </ImageScroller>
-        </FirstBanner>
-        <SecondBanner>
-          <EmojiImage src={Emoji} />
-          <div>
-            <Point>Point. 02</Point>
-            <Title>
-              서로에게 이모지로 감정을
-              <LineBreak />
-              표현해보세요
-            </Title>
-            <Description>롤링 페이퍼에 이모지를 추가할 수 있어요.</Description>
-          </div>
-        </SecondBanner>
-        <LinkButton to="/list">구경해보기</LinkButton>
-      </Container>
-    </Wrapper>
+    <>
+      <Header />
+      <Wrapper>
+        <Container>
+          <FirstBanner>
+            <div>
+              <Point>Point. 01</Point>
+              <Title>
+                누구나 손쉽게, 온라인
+                <LineBreak />
+                롤링 페이퍼를 만들 수 있어요
+              </Title>
+              <Description>로그인 없이 자유롭게 만들어요.</Description>
+            </div>
+            <ImageScroller>
+              <RollingImage src={Rolling} />
+            </ImageScroller>
+          </FirstBanner>
+          <SecondBanner>
+            <EmojiImage src={Emoji} />
+            <div>
+              <Point>Point. 02</Point>
+              <Title>
+                서로에게 이모지로 감정을
+                <LineBreak />
+                표현해보세요
+              </Title>
+              <Description>
+                롤링 페이퍼에 이모지를 추가할 수 있어요.
+              </Description>
+            </div>
+          </SecondBanner>
+          <LinkButton to="/list">구경해보기</LinkButton>
+        </Container>
+      </Wrapper>
+    </>
   );
 };
 
