@@ -1,7 +1,12 @@
 // import { styled } from 'styled-components';
 import CardList from './CardList';
 import CardPlus from './CardPlus';
-import { MainUl } from '../Header/MessageListPageCss';
+import {
+  CardDeletedFlex,
+  MainContent,
+  MainUl,
+} from '../Header/MessageListPageCss';
+import DeleteButton from './DeleteButton';
 
 // const BackImgs = styled.div`
 // background-image: url(${props => props.path });
@@ -31,14 +36,19 @@ import { MainUl } from '../Header/MessageListPageCss';
 
 const Main = () => {
   return (
-    <MainUl>
-      <CardPlus />
-      <CardPlus />
-      <CardPlus />
-      <CardPlus />
-      <CardPlus />
-      <CardList />
-    </MainUl>
+    <MainContent>
+      <MainUl>
+        <CardDeletedFlex>
+          <DeleteButton />
+        </CardDeletedFlex>
+        <CardPlus />
+        <CardPlus />
+        <CardPlus />
+        <CardPlus />
+        <CardPlus />
+        <CardList />
+      </MainUl>
+    </MainContent>
   );
 };
 export default Main;

@@ -28,7 +28,9 @@ const CardList = () => {
         <CardProfileTitle>
           <CardProfileSender>
             <CardProfileFrom>From.</CardProfileFrom>
-            <CardProfileName>김동훈</CardProfileName>
+            <CardProfileName>
+              문필겸문필겸문필겸문필겸문필겸문필겸문필겸
+            </CardProfileName>
           </CardProfileSender>
           <CardProfileRelationship>가족</CardProfileRelationship>
           <CardProfileDeletedButton>
