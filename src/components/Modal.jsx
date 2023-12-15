@@ -1,38 +1,30 @@
 import styled from 'styled-components';
 
-import SampleImage from '../assets/images/home-emoji.png';
-
-const Modal = () => {
+const Modal = ({
+  sender,
+  profileImageURL,
+  relationship,
+  content,
+  font,
+  createdAt,
+}) => {
   return (
     <Wrapper>
       <Container>
         <ModalHeader>
           <WriterArea>
-            <ProfileImage src={SampleImage} alt="profile" />
+            <ProfileImage src={profileImageURL} alt="profile" />
             <div>
               <Writer>
-                From. <span>김동훈</span>
+                From. <span>{sender}</span>
               </Writer>
-              <RelationShip>동료</RelationShip>
+              <RelationShip>{relationship}</RelationShip>
             </div>
           </WriterArea>
-          <Date>2023.07.08</Date>
+          <Date>{createdAt}</Date>
         </ModalHeader>
         <hr />
-        <ModalContents>
-          코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또
-          하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심
-          또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두
-          조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력
-          모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강,
-          체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요.
-          코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또
-          하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심
-          또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두
-          조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력
-          모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강,
-          체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요.
-        </ModalContents>
+        <ModalContents>{content}</ModalContents>
         <ModalButton>확인</ModalButton>
       </Container>
     </Wrapper>
