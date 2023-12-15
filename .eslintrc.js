@@ -25,10 +25,11 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
-    "react/react-in-jsx-scope": "off",
-    "no-unused-vars": "warn",
-    // 함수형 컴포넌트의 정의 방식 선언
-    "react/function-component-definition": [
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'no-unused-vars': 'warn',
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
+    'react/function-component-definition': [
       2,
       { namedComponents: "arrow-function" },
     ],
