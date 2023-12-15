@@ -13,15 +13,15 @@ const StyledSection = styled.section`
   }
 
   & input,
-  & textarea,
   & button {
     padding: 12px 16px;
     border-radius: 8px;
     border: 1px solid #ccc;
+    line-height: 26px;
+    cursor: pointer;
   }
 
-  & input:focus,
-  & textarea:focus {
+  & input:focus {
     border: 2px solid #555;
   }
 
@@ -53,6 +53,7 @@ const StyledSection = styled.section`
   & li {
     padding: 12px 16px;
     color: #555;
+    line-height: 26px;
   }
 
   & li:hover {
@@ -81,13 +82,36 @@ const StyledSection = styled.section`
   }
 
   & textarea {
+    width: 100%;
+    height: 211px;
     position: relative;
-    width: 720px;
-    height: 260px;
     padding: 16px;
+    resize: none;
+    &.bold {
+      font-weight: 700;
+    }
+    &.italic {
+      font-style: italic;
+    }
+    &.underline {
+      text-decoration: underline;
+    }
+    &.align-center {
+      text-align: center;
+    }
+    &.align-right {
+      text-align: end;
+    }
+    &.align-center {
+      text-align: center;
+    }
+  }
+
+  & .text-editor {
+    width: 720px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    resize: none;
+    border-right-style: 1px solid #ccc;
   }
 `;
 
