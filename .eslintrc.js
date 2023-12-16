@@ -38,5 +38,6 @@ module.exports = {
       },
     ],
     'react/prop-types': 'off',
+    'react/jsx-no-useless-fragment': 'off',
   },
 };

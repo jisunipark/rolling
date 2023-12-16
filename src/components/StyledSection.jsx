@@ -102,8 +102,11 @@ const StyledSection = styled.section`
     &.align-right {
       text-align: end;
     }
-    &.align-center {
-      text-align: center;
+    &.align-justify {
+      text-align: justify;
+    }
+    &.list {
+      display: list-item;
     }
   }
 
