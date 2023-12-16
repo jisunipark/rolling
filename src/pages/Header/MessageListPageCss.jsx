@@ -479,3 +479,32 @@ export const CardDeletedFlex = styled.div`
     bottom: 24px;
   }
 `;
+
+// URL눌렸을때 나오는 문구
+
+export const Toast = styled.div`
+  display: flex;
+  width: 320px;
+  height: 64px;
+  padding: 19px 30px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 49px;
+  flex-shrink: 0;
+`;
+
+export const ToastText = styled.p`
+  color: var(--white, #fff);
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+  letter-spacing: -0.16px;
+`;
+
+export const ToastCompleted = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+`;
