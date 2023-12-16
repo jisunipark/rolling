@@ -1,13 +1,8 @@
 import styled from 'styled-components';
 
-const Modal = ({
-  sender,
-  profileImageURL,
-  relationship,
-  content,
-  font,
-  createdAt,
-}) => {
+const Modal = (modalDatas) => {
+  const { sender, profileImageURL, relationship, content, font, createdAt } =
+    modalDatas;
   return (
     <Wrapper>
       <Container>
