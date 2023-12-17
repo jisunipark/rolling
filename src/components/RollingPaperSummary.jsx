@@ -13,6 +13,18 @@ const BackgroundColors = {
   beige: '#FFE2AD',
 };
 
+const shakeX = keyframes`
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25%, 75% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+`;
+
 const StyledLink = styled(Link)`
   flex-shrink: 0;
   box-sizing: border-box;
@@ -28,10 +40,10 @@ const StyledLink = styled(Link)`
   padding: 30px 22px 20px 24px;
   overflow: hidden;
   position: relative;
+  transition: transform 0.3s ease-in-out;
 
   &:hover {
-    transform: scale(1.1);
-    transition: transform 0.1s ease-in-out;
+    animation: ${shakeX} 0.5s ease-in-out infinite;
   }
 
   & .information {
