@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 // eslint-disable-next-line
-import cppCheck from '../assets/images/cppCheck.svg';
+import enabled from '../assets/images/Enabled.svg';
 
 const ColorDiv = styled.div`
   margin: 45px 0;
@@ -14,25 +14,19 @@ const ImgDiv = styled(ColorDiv)`
 `;
 
 const ShowColorDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: blue;
   width: 168px;
   height: 168px;
   border-radius: 16px;
-  transition: all 1s;
   img {
-    transition: all 1s;
-    display: none;
+    visibility: hidden;
   }
   &:hover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     img {
-      display: flex;
-      background-color: #555;
-      padding: 10px;
-      border-radius: 50%;
+      visibility: visible;
     }
   }
 `;
@@ -48,31 +42,31 @@ const CppShowDiv = ({isColor}) => {
       {isColor ? (
         <ColorDiv>
           <ShowColorDiv>
-            <img src={cppCheck} alt="" />
+            <img src={enabled} alt="" />
           </ShowColorDiv>
           <ShowColorDiv>
-            <img src={cppCheck} alt="" />
+            <img src={enabled} alt="" />
           </ShowColorDiv>
           <ShowColorDiv>
-            <img src={cppCheck} alt="" />
+            <img src={enabled} alt="" />
           </ShowColorDiv>
           <ShowColorDiv>
-            <img src={cppCheck} alt="" />
+            <img src={enabled} alt="" />
           </ShowColorDiv>
         </ColorDiv>
       ) : (
         <ImgDiv>
           <ShowImgDiv>
-            <img src={cppCheck} alt="" />
+            <img src={enabled} alt="" />
           </ShowImgDiv>
           <ShowImgDiv>
-            <img src={cppCheck} alt="" />
+            <img src={enabled} alt="" />
           </ShowImgDiv>
           <ShowImgDiv>
-            <img src={cppCheck} alt="" />
+            <img src={enabled} alt="" />
           </ShowImgDiv>
           <ShowImgDiv>
-            <img src={cppCheck} alt="" />
+            <img src={enabled} alt="" />
           </ShowImgDiv>
         </ImgDiv>
       )}

@@ -1,5 +1,6 @@
 import { styled } from 'styled-components';
 import { useState } from 'react';
+import Header from '../components/Header';
 import CppNameInput from '../components/CppNameInput';
 import CppCreateButton from '../components/CppCreateButton';
 import CppSelectButton from '../components/CppSelectButton';
@@ -9,7 +10,7 @@ const CppForm = styled.form``;
 
 const CppTopBox = styled.div`
   width: 720px;
-  margin: 0 auto;
+  margin: 57px auto 0;
   & p {
     font-size: 24px;
     font-weight: 700;
@@ -42,28 +43,31 @@ const CppBotBox = styled.div`
 const CreatePaperPage = () => {
   const [isColor, setisColor] = useState(true);
   return (
-    <main>
-      <CppForm>
-        <CppTopBox className="recipient_name">
-          <p>To.</p>
-          <CppNameInput />
-        </CppTopBox>
-        <CppBotBox>
-          <div className="text_box">
-            <p className="title">배경화면을 선택해 주세요.</p>
-            <p className="text">
-              컬러를 선택하거나, 이미지를 선택할 수 있습니다.
-            </p>
-          </div>
-          <div>
-            <CppSelectButton setisColor={setisColor} />
-            <CppShowDiv isColor={isColor} />
-            {/* true */}
-          </div>
-          <CppCreateButton />
-        </CppBotBox>
-      </CppForm>
-    </main>
+    <>
+      <Header hidden="true" />
+      <main>
+        <CppForm>
+          <CppTopBox className="recipient_name">
+            <p>To.</p>
+            <CppNameInput />
+          </CppTopBox>
+          <CppBotBox>
+            <div className="text_box">
+              <p className="title">배경화면을 선택해 주세요.</p>
+              <p className="text">
+                컬러를 선택하거나, 이미지를 선택할 수 있습니다.
+              </p>
+            </div>
+            <div>
+              <CppSelectButton setisColor={setisColor} />
+              <CppShowDiv isColor={isColor} />
+              {/* true */}
+            </div>
+            <CppCreateButton />
+          </CppBotBox>
+        </CppForm>
+      </main>
+    </>
   );
 };
 
