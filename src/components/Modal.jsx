@@ -17,7 +17,7 @@ const Modal = (modalDatas, setIsOpen) => {
     createdAt,
   } = modalDatas;
 
-  const handleIsOpen = setIsOpen(false);
+  const handleIsOpen = () => setIsOpen(false);
 
   return (
     <Wrapper>
