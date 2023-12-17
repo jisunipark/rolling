@@ -240,7 +240,447 @@
       ]
     },
     {
-      "id": 28,
+      "id": 40,
+      "name": "조예원",
+      "backgroundColor": "blue",
+      "backgroundImageURL": null,
+      "createdAt": "2023-07-31T09:58:37.631384Z",
+      "messageCount": 6,
+      "recentMessages": [
+        {
+          "id": 28,
+          "recipientId": 28,
+          "sender": "test user15",
+          "profileImageURL": "https://images.pexels.com/photos/1370750/pexels-photo-1370750.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지1",
+          "font": "나눔명조",
+          "createdAt": "2023-12-31T09:58:47.272896Z"
+        },
+        {
+          "id": 29,
+          "recipientId": 28,
+          "sender": "test user16",
+          "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지2",
+          "font": "나눔명조",
+          "createdAt": "2023-11-31T09:58:46.889479Z"
+        },
+        {
+          "id": 30,
+          "recipientId": 28,
+          "sender": "test user17",
+          "profileImageURL": "https://images.pexels.com/photos/2076596/pexels-photo-2076596.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지3",
+          "font": "나눔명조",
+          "createdAt": "2023-10-31T09:58:46.889479Z"
+        },
+        {
+          "id": 31,
+          "recipientId": 28,
+          "sender": "test user18",
+          "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지4",
+          "font": "나눔명조",
+          "createdAt": "2023-09-31T09:58:46.889479Z"
+        },
+        {
+          "id": 32,
+          "recipientId": 28,
+          "sender": "test user19",
+          "profileImageURL": "https://images.pexels.com/photos/1462980/pexels-photo-1462980.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지5",
+          "font": "나눔명조",
+          "createdAt": "2023-08-31T09:58:46.889479Z"
+        },
+        {
+          "id": 33,
+          "recipientId": 28,
+          "sender": "test user20",
+          "profileImageURL": "https://images.pexels.com/photos/1547971/pexels-photo-1547971.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지6",
+          "font": "나눔명조",
+          "createdAt": "2023-07-31T09:58:46.889479Z"
+        }
+      ],
+      "reactionCount": 28,
+      "topReactions": [
+        {
+          "id": 34,
+          "emoji": "😀",
+          "count": 15
+        },
+        {
+          "id": 35,
+          "emoji": "🥹",
+          "count": 8
+        },
+        {
+          "id": 36,
+          "emoji": "😁",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "name": "조예원",
+      "backgroundColor": "blue",
+      "backgroundImageURL": null,
+      "createdAt": "2023-07-31T09:58:37.631384Z",
+      "messageCount": 6,
+      "recentMessages": [
+        {
+          "id": 28,
+          "recipientId": 28,
+          "sender": "test user15",
+          "profileImageURL": "https://images.pexels.com/photos/1370750/pexels-photo-1370750.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지1",
+          "font": "나눔명조",
+          "createdAt": "2023-12-31T09:58:47.272896Z"
+        },
+        {
+          "id": 29,
+          "recipientId": 28,
+          "sender": "test user16",
+          "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지2",
+          "font": "나눔명조",
+          "createdAt": "2023-11-31T09:58:46.889479Z"
+        },
+        {
+          "id": 30,
+          "recipientId": 28,
+          "sender": "test user17",
+          "profileImageURL": "https://images.pexels.com/photos/2076596/pexels-photo-2076596.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지3",
+          "font": "나눔명조",
+          "createdAt": "2023-10-31T09:58:46.889479Z"
+        },
+        {
+          "id": 31,
+          "recipientId": 28,
+          "sender": "test user18",
+          "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지4",
+          "font": "나눔명조",
+          "createdAt": "2023-09-31T09:58:46.889479Z"
+        },
+        {
+          "id": 32,
+          "recipientId": 28,
+          "sender": "test user19",
+          "profileImageURL": "https://images.pexels.com/photos/1462980/pexels-photo-1462980.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지5",
+          "font": "나눔명조",
+          "createdAt": "2023-08-31T09:58:46.889479Z"
+        },
+        {
+          "id": 33,
+          "recipientId": 28,
+          "sender": "test user20",
+          "profileImageURL": "https://images.pexels.com/photos/1547971/pexels-photo-1547971.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지6",
+          "font": "나눔명조",
+          "createdAt": "2023-07-31T09:58:46.889479Z"
+        }
+      ],
+      "reactionCount": 28,
+      "topReactions": [
+        {
+          "id": 34,
+          "emoji": "😀",
+          "count": 15
+        },
+        {
+          "id": 35,
+          "emoji": "🥹",
+          "count": 8
+        },
+        {
+          "id": 36,
+          "emoji": "😁",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "name": "조예원",
+      "backgroundColor": "blue",
+      "backgroundImageURL": null,
+      "createdAt": "2023-07-31T09:58:37.631384Z",
+      "messageCount": 6,
+      "recentMessages": [
+        {
+          "id": 28,
+          "recipientId": 28,
+          "sender": "test user15",
+          "profileImageURL": "https://images.pexels.com/photos/1370750/pexels-photo-1370750.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지1",
+          "font": "나눔명조",
+          "createdAt": "2023-12-31T09:58:47.272896Z"
+        },
+        {
+          "id": 29,
+          "recipientId": 28,
+          "sender": "test user16",
+          "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지2",
+          "font": "나눔명조",
+          "createdAt": "2023-11-31T09:58:46.889479Z"
+        },
+        {
+          "id": 30,
+          "recipientId": 28,
+          "sender": "test user17",
+          "profileImageURL": "https://images.pexels.com/photos/2076596/pexels-photo-2076596.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지3",
+          "font": "나눔명조",
+          "createdAt": "2023-10-31T09:58:46.889479Z"
+        },
+        {
+          "id": 31,
+          "recipientId": 28,
+          "sender": "test user18",
+          "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지4",
+          "font": "나눔명조",
+          "createdAt": "2023-09-31T09:58:46.889479Z"
+        },
+        {
+          "id": 32,
+          "recipientId": 28,
+          "sender": "test user19",
+          "profileImageURL": "https://images.pexels.com/photos/1462980/pexels-photo-1462980.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지5",
+          "font": "나눔명조",
+          "createdAt": "2023-08-31T09:58:46.889479Z"
+        },
+        {
+          "id": 33,
+          "recipientId": 28,
+          "sender": "test user20",
+          "profileImageURL": "https://images.pexels.com/photos/1547971/pexels-photo-1547971.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지6",
+          "font": "나눔명조",
+          "createdAt": "2023-07-31T09:58:46.889479Z"
+        }
+      ],
+      "reactionCount": 28,
+      "topReactions": [
+        {
+          "id": 34,
+          "emoji": "😀",
+          "count": 15
+        },
+        {
+          "id": 35,
+          "emoji": "🥹",
+          "count": 8
+        },
+        {
+          "id": 36,
+          "emoji": "😁",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "name": "조예원",
+      "backgroundColor": "blue",
+      "backgroundImageURL": null,
+      "createdAt": "2023-07-31T09:58:37.631384Z",
+      "messageCount": 6,
+      "recentMessages": [
+        {
+          "id": 28,
+          "recipientId": 28,
+          "sender": "test user15",
+          "profileImageURL": "https://images.pexels.com/photos/1370750/pexels-photo-1370750.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지1",
+          "font": "나눔명조",
+          "createdAt": "2023-12-31T09:58:47.272896Z"
+        },
+        {
+          "id": 29,
+          "recipientId": 28,
+          "sender": "test user16",
+          "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지2",
+          "font": "나눔명조",
+          "createdAt": "2023-11-31T09:58:46.889479Z"
+        },
+        {
+          "id": 30,
+          "recipientId": 28,
+          "sender": "test user17",
+          "profileImageURL": "https://images.pexels.com/photos/2076596/pexels-photo-2076596.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지3",
+          "font": "나눔명조",
+          "createdAt": "2023-10-31T09:58:46.889479Z"
+        },
+        {
+          "id": 31,
+          "recipientId": 28,
+          "sender": "test user18",
+          "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지4",
+          "font": "나눔명조",
+          "createdAt": "2023-09-31T09:58:46.889479Z"
+        },
+        {
+          "id": 32,
+          "recipientId": 28,
+          "sender": "test user19",
+          "profileImageURL": "https://images.pexels.com/photos/1462980/pexels-photo-1462980.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지5",
+          "font": "나눔명조",
+          "createdAt": "2023-08-31T09:58:46.889479Z"
+        },
+        {
+          "id": 33,
+          "recipientId": 28,
+          "sender": "test user20",
+          "profileImageURL": "https://images.pexels.com/photos/1547971/pexels-photo-1547971.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지6",
+          "font": "나눔명조",
+          "createdAt": "2023-07-31T09:58:46.889479Z"
+        }
+      ],
+      "reactionCount": 28,
+      "topReactions": [
+        {
+          "id": 34,
+          "emoji": "😀",
+          "count": 15
+        },
+        {
+          "id": 35,
+          "emoji": "🥹",
+          "count": 8
+        },
+        {
+          "id": 36,
+          "emoji": "😁",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "name": "조예원",
+      "backgroundColor": "blue",
+      "backgroundImageURL": null,
+      "createdAt": "2023-07-31T09:58:37.631384Z",
+      "messageCount": 6,
+      "recentMessages": [
+        {
+          "id": 28,
+          "recipientId": 28,
+          "sender": "test user15",
+          "profileImageURL": "https://images.pexels.com/photos/1370750/pexels-photo-1370750.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지1",
+          "font": "나눔명조",
+          "createdAt": "2023-12-31T09:58:47.272896Z"
+        },
+        {
+          "id": 29,
+          "recipientId": 28,
+          "sender": "test user16",
+          "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지2",
+          "font": "나눔명조",
+          "createdAt": "2023-11-31T09:58:46.889479Z"
+        },
+        {
+          "id": 30,
+          "recipientId": 28,
+          "sender": "test user17",
+          "profileImageURL": "https://images.pexels.com/photos/2076596/pexels-photo-2076596.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지3",
+          "font": "나눔명조",
+          "createdAt": "2023-10-31T09:58:46.889479Z"
+        },
+        {
+          "id": 31,
+          "recipientId": 28,
+          "sender": "test user18",
+          "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지4",
+          "font": "나눔명조",
+          "createdAt": "2023-09-31T09:58:46.889479Z"
+        },
+        {
+          "id": 32,
+          "recipientId": 28,
+          "sender": "test user19",
+          "profileImageURL": "https://images.pexels.com/photos/1462980/pexels-photo-1462980.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지5",
+          "font": "나눔명조",
+          "createdAt": "2023-08-31T09:58:46.889479Z"
+        },
+        {
+          "id": 33,
+          "recipientId": 28,
+          "sender": "test user20",
+          "profileImageURL": "https://images.pexels.com/photos/1547971/pexels-photo-1547971.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "relationship": "지인",
+          "content": "5테스트 목적의 메세지6",
+          "font": "나눔명조",
+          "createdAt": "2023-07-31T09:58:46.889479Z"
+        }
+      ],
+      "reactionCount": 28,
+      "topReactions": [
+        {
+          "id": 34,
+          "emoji": "😀",
+          "count": 15
+        },
+        {
+          "id": 35,
+          "emoji": "🥹",
+          "count": 8
+        },
+        {
+          "id": 36,
+          "emoji": "😁",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 90,
       "name": "조예원",
       "backgroundColor": "blue",
       "backgroundImageURL": null,

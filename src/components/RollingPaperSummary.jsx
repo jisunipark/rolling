@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import beigeSvg from '../assets/images/beige.svg';
 import greenSvg from '../assets/images/green.svg';
 import purpleSvg from '../assets/images/purple.svg';
@@ -28,6 +28,11 @@ const StyledLink = styled(Link)`
   padding: 30px 22px 20px 24px;
   overflow: hidden;
   position: relative;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+  }
 
   & .information {
     & .receiver {
@@ -142,73 +147,75 @@ const CommenterImages = styled.div`
 
 const RollingPaperSummary = ({ item }) => {
   return (
-    <StyledLink item={item} to={`/post/${item.id}`}>
-      {item.backgroundImageURL ? null : (
-        <img
-          src={(() => {
-            switch (item.backgroundColor) {
-              case 'blue':
-                return blueSvg;
-              case 'green':
-                return greenSvg;
-              case 'purple':
-                return purpleSvg;
-              case 'beige':
-                return beigeSvg;
-              default:
-                return ''; // 기본값 설정
-            }
-          })()}
-          alt="color pattern"
-          className="pattern"
-        />
-      )}
-      <div className="information">
-        <p className="receiver">To. {item.name}</p>
-        <CommenterImages>
-          {item.recentMessages.length < 1 ? (
-            <div />
-          ) : (
-            <img
-              src={item.recentMessages[0].profileImageURL}
-              alt="처음 롤링페이퍼를 작성한 사람의 프로필 사진"
-              className="first"
-            />
-          )}
-          {item.recentMessages.length < 2 ? (
-            <div />
-          ) : (
-            <img
-              src={item.recentMessages[1].profileImageURL}
-              alt="두번째 롤링페이퍼를 작성한 사람의 프로필 사진"
-              className="second"
-            />
-          )}
-          {item.recentMessages.length < 3 ? (
-            <div />
-          ) : (
-            <img
-              src={item.recentMessages[2].profileImageURL}
-              alt="세번째 롤링페이퍼를 작성한 사람의 프로필 사진"
-              className="third"
-            />
-          )}
-          {item.recentMessages.length < 4 ? (
-            <div />
-          ) : (
-            <div className="plusHowMany">+{item.messageCount - 3}</div>
-          )}
-        </CommenterImages>
-        <p className="howManyWriters">
-          <strong>{item.recentMessages.length}</strong>명이 작성했어요!
-        </p>
-      </div>
-      <div className="emoji">
-        {item.topReactions.map((items) => {
-          return <TopReactions key={items.id} item={items} />;
-        })}
-      </div>
-    </StyledLink>
+    <div className="slide">
+      <StyledLink item={item} to={`/post/${item.id}`}>
+        {item.backgroundImageURL ? null : (
+          <img
+            src={(() => {
+              switch (item.backgroundColor) {
+                case 'blue':
+                  return blueSvg;
+                case 'green':
+                  return greenSvg;
+                case 'purple':
+                  return purpleSvg;
+                case 'beige':
+                  return beigeSvg;
+                default:
+                  return ''; // 기본값 설정
+              }
+            })()}
+            alt="color pattern"
+            className="pattern"
+          />
+        )}
+        <div className="information">
+          <p className="receiver">To. {item.name}</p>
+          <CommenterImages>
+            {item.recentMessages.length < 1 ? (
+              <div />
+            ) : (
+              <img
+                src={item.recentMessages[0].profileImageURL}
+                alt="처음 롤링페이퍼를 작성한 사람의 프로필 사진"
+                className="first"
+              />
+            )}
+            {item.recentMessages.length < 2 ? (
+              <div />
+            ) : (
+              <img
+                src={item.recentMessages[1].profileImageURL}
+                alt="두번째 롤링페이퍼를 작성한 사람의 프로필 사진"
+                className="second"
+              />
+            )}
+            {item.recentMessages.length < 3 ? (
+              <div />
+            ) : (
+              <img
+                src={item.recentMessages[2].profileImageURL}
+                alt="세번째 롤링페이퍼를 작성한 사람의 프로필 사진"
+                className="third"
+              />
+            )}
+            {item.recentMessages.length < 4 ? (
+              <div />
+            ) : (
+              <div className="plusHowMany">+{item.messageCount - 3}</div>
+            )}
+          </CommenterImages>
+          <p className="howManyWriters">
+            <strong>{item.recentMessages.length}</strong>명이 작성했어요!
+          </p>
+        </div>
+        <div className="emoji">
+          {item.topReactions.map((items) => {
+            return <TopReactions key={items.id} item={items} />;
+          })}
+        </div>
+      </StyledLink>
+    </div>
   );
 };
 
