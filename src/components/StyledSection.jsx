@@ -118,6 +118,11 @@ const StyledSection = styled.section`
     line-height: 0;
     background-color: transparent;
   }
+
+  & button > img {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 export default StyledSection;

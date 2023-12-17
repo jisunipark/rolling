@@ -33,11 +33,11 @@ const CreateMessagePage = () => {
       <StyledContainer>
         <TextInputSection>From.</TextInputSection>
         <ProfileImgInputSection>프로필 이미지</ProfileImgInputSection>
-        <ToggleDownSection options="relationship">
+        <ToggleDownSection optionType="relationship">
           상대와의 관계
         </ToggleDownSection>
         <TextareaInputSection>내용을 입력해 주세요</TextareaInputSection>
-        <ToggleDownSection options="font" last>
+        <ToggleDownSection optionType="font" last>
           폰트 선택
         </ToggleDownSection>
       </StyledContainer>
