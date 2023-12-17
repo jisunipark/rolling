@@ -21,7 +21,8 @@ const StyledSection = styled.section`
     cursor: pointer;
   }
 
-  & input:focus {
+  & input:focus,
+  & button.focus {
     border: 2px solid #555;
   }
 
@@ -60,13 +61,25 @@ const StyledSection = styled.section`
     background-color: #f6f6f6;
   }
 
+  & .toggle-options {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
   & ul {
+    position: ${(props) => (props.last ? 'static' : 'absolute')};
     width: 320px;
     padding-top: 10px;
     padding-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    /* display: none; */
+    background-color: #fff;
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
+    z-index: 1;
+    /* &.last-toggle {
+      position: static;
+    } */
   }
 
   & p {
@@ -87,27 +100,6 @@ const StyledSection = styled.section`
     position: relative;
     padding: 16px;
     resize: none;
-    &.bold {
-      font-weight: 700;
-    }
-    &.italic {
-      font-style: italic;
-    }
-    &.underline {
-      text-decoration: underline;
-    }
-    &.align-center {
-      text-align: center;
-    }
-    &.align-right {
-      text-align: end;
-    }
-    &.align-justify {
-      text-align: justify;
-    }
-    &.list {
-      display: list-item;
-    }
   }
 
   & .text-editor {
@@ -115,6 +107,16 @@ const StyledSection = styled.section`
     border-radius: 8px;
     border: 1px solid #ccc;
     border-right-style: 1px solid #ccc;
+  }
+
+  &.toggle-optons > button {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    border: 0;
+    border-radius: 0;
+    line-height: 0;
+    background-color: transparent;
   }
 `;
 

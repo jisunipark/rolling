@@ -37,7 +37,9 @@ const CreateMessagePage = () => {
           상대와의 관계
         </ToggleDownSection>
         <TextareaInputSection>내용을 입력해 주세요</TextareaInputSection>
-        <ToggleDownSection options="font">폰트 선택</ToggleDownSection>
+        <ToggleDownSection options="font" last>
+          폰트 선택
+        </ToggleDownSection>
       </StyledContainer>
       <Link to="/post/{id}">
         <StyledButton>생성하기</StyledButton>
