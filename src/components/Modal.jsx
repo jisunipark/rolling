@@ -15,7 +15,11 @@ const Modal = (modalDatas) => {
     content,
     font = 'Noto Sans',
     createdAt,
+    setIsOpen,
   } = modalDatas;
+
+  const handleIsOpen = setIsOpen(false);
+
   return (
     <Wrapper>
       <Container>
@@ -33,7 +37,7 @@ const Modal = (modalDatas) => {
         </ModalHeader>
         <hr />
         <ModalContents font={fontFamily[font]}>{content}</ModalContents>
-        <ModalButton>확인</ModalButton>
+        <ModalButton onClick={handleIsOpen}>확인</ModalButton>
       </Container>
     </Wrapper>
   );
