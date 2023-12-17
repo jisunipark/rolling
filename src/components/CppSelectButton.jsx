@@ -23,9 +23,9 @@ const SelectButton = styled.button`
   }
 `;
 // eslint-disable-next-line
-const CppSelectButton = ({ setisColor}) => {
+const CppSelectButton = ({ setIsColor}) => {
   const changeType = (type) => {
-    setisColor(type);
+    setIsColor(type);
   };
 
   return (

@@ -16,7 +16,7 @@ const CreateButton = styled.button`
 `;
 
 const CppCreateButton = () => {
-  return <CreateButton>생성하기</CreateButton>;
+  return <CreateButton type="submit">생성하기</CreateButton>;
 };
 
 export default CppCreateButton;

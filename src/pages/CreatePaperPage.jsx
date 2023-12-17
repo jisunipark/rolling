@@ -1,7 +1,6 @@
 import { styled } from 'styled-components';
 import { useState } from 'react';
 import Header from '../components/Header';
-import CppNameInput from '../components/CppNameInput';
 import CppCreateButton from '../components/CppCreateButton';
 import CppSelectButton from '../components/CppSelectButton';
 import CppShowDiv from '../components/CppShowDiv';
@@ -11,12 +10,28 @@ const CppForm = styled.form``;
 const CppTopBox = styled.div`
   width: 720px;
   margin: 57px auto 0;
-  & p {
+  .target {
     font-size: 24px;
     font-weight: 700;
     line-height: 42px; /* 175% */
     letter-spacing: -0.24px;
     margin-bottom: 12px;
+  }
+  .errorMessage {
+    margin-top: 5px;
+    color: red;
+    text-indent: 2px;
+  }
+`;
+const CppNameInput = styled.input`
+  width: 720px;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  ::placeholder {
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: -0.16px;
   }
 `;
 const CppBotBox = styled.div`
@@ -41,15 +56,38 @@ const CppBotBox = styled.div`
 `;
 
 const CreatePaperPage = () => {
-  const [isColor, setisColor] = useState(true);
+  const [isColor, setIsColor] = useState(true);
+  const [userName, setUserName] = useState('');
+  const [error, setError] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!userName) {
+      setError('값을 입력해 주세요.');
+    } else {
+      setError(null);
+      console.log({ userName });
+    }
+  };
+
+  const NameValueChange = (e) => {
+    setUserName(e.target.value);
+  };
+
   return (
     <>
       <Header hidden="true" />
       <main>
-        <CppForm>
+        <CppForm onSubmit={handleSubmit}>
           <CppTopBox className="recipient_name">
-            <p>To.</p>
-            <CppNameInput />
+            <p className="target">To.</p>
+            <CppNameInput
+              value={userName}
+              onChange={NameValueChange}
+              placeholder="받는 사람 이름을 입력해 주세요"
+            />
+            {error && <p className="errorMessage">{error}</p>}
           </CppTopBox>
           <CppBotBox>
             <div className="text_box">
@@ -59,9 +97,8 @@ const CreatePaperPage = () => {
               </p>
             </div>
             <div>
-              <CppSelectButton setisColor={setisColor} />
+              <CppSelectButton setIsColor={setIsColor} />
               <CppShowDiv isColor={isColor} />
-              {/* true */}
             </div>
             <CppCreateButton />
           </CppBotBox>
