@@ -1,8 +1,21 @@
 import styled from 'styled-components';
 
+const fontFamily = {
+  'Noto Sans': 'Noto Sans KR',
+  Pretendard: 'Pretendard',
+  나눔명조: 'Nanum Myeongjo',
+  '나눔손글씨 손편지체': 'Handletter',
+};
+
 const Modal = (modalDatas) => {
-  const { sender, profileImageURL, relationship, content, font, createdAt } =
-    modalDatas;
+  const {
+    sender,
+    profileImageURL,
+    relationship,
+    content,
+    font = 'Noto Sans',
+    createdAt,
+  } = modalDatas;
   return (
     <Wrapper>
       <Container>
@@ -19,7 +32,7 @@ const Modal = (modalDatas) => {
           <Date>{createdAt}</Date>
         </ModalHeader>
         <hr />
-        <ModalContents>{content}</ModalContents>
+        <ModalContents font={fontFamily[font]}>{content}</ModalContents>
         <ModalButton>확인</ModalButton>
       </Container>
     </Wrapper>
@@ -115,6 +128,7 @@ const ModalContents = styled.div`
   letter-spacing: -0.18px;
   overflow-y: auto;
   scrollbar-width: 4px;
+  font-family: ${(font) => `${font}, sans-serif`};
 
   &::-webkit-scrollbar {
     width: 20px;
