@@ -7,7 +7,7 @@ const fontFamily = {
   '나눔손글씨 손편지체': 'Handletter',
 };
 
-const Modal = (modalDatas) => {
+const Modal = (modalDatas, setIsOpen) => {
   const {
     sender,
     profileImageURL,
@@ -15,7 +15,6 @@ const Modal = (modalDatas) => {
     content,
     font = 'Noto Sans',
     createdAt,
-    setIsOpen,
   } = modalDatas;
 
   const handleIsOpen = setIsOpen(false);
