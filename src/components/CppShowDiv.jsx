@@ -6,12 +6,18 @@ const ColorDiv = styled.div`
   margin: 45px 0;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 1200px) {
+    margin: 40px 0 340px;
+  }
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    width: 320px;
+    margin: 28px 0 82px;
+    gap: 12px;
+  }
 `;
 
-const ImgDiv = styled(ColorDiv)`
-  flex-wrap: wrap;
-  gap: 16px;
-`;
+const ImgDiv = styled(ColorDiv)``;
 
 const ShowColorDiv = styled.div`
   display: flex;
@@ -28,6 +34,10 @@ const ShowColorDiv = styled.div`
     img {
       visibility: visible;
     }
+  }
+  @media (max-width: 768px) {
+    width: 154px;
+    height: 154px;
   }
 `;
 

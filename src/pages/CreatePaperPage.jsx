@@ -22,6 +22,19 @@ const CppTopBox = styled.div`
     color: red;
     text-indent: 2px;
   }
+  @media (max-width: 1200px) {
+    margin: 49px auto 0;
+    .target {
+      line-height: 36px;
+    }
+  }
+  @media (max-width: 768px) {
+    width: 320px;
+    margin: 50px auto 0;
+    .target {
+      line-height: 36px;
+    }
+  }
 `;
 const CppNameInput = styled.input`
   width: 720px;
@@ -32,6 +45,9 @@ const CppNameInput = styled.input`
     font-weight: 400;
     line-height: 26px;
     letter-spacing: -0.16px;
+  }
+  @media (max-width: 768px) {
+    width: 320px;
   }
 `;
 const CppBotBox = styled.div`
@@ -53,25 +69,37 @@ const CppBotBox = styled.div`
     line-height: 26px;
     letter-spacing: -0.16px;
   }
+  @media (max-width: 1200px) {
+    margin: 54px auto 0;
+  }
+  @media (max-width: 768px) {
+    width: 320px;
+    margin: 48px auto 0;
+  }
 `;
 
 const CreatePaperPage = () => {
   const [isColor, setIsColor] = useState(true);
+  // input
   const [userName, setUserName] = useState('');
+  // input 값이 없을때 error 메세지 출력
   const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // 값이 없으면 에러 메시지 표시
     if (!userName) {
       setError('값을 입력해 주세요.');
     } else {
+      // 값이 있으면 에러 상태 초기화 및 로그 출력
       setError(null);
-      console.log({ userName });
+      console.log(userName);
     }
   };
 
   const NameValueChange = (e) => {
+    // input의 value가 변경될때마다 그 값을 state에 반영.
     setUserName(e.target.value);
   };
 

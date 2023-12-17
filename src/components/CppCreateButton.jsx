@@ -13,6 +13,14 @@ const CreateButton = styled.button`
   font-weight: 700;
   line-height: 28px;
   letter-spacing: -0.18px;
+  @media (max-width: 1200px) {
+    margin-bottom: 24px;
+  }
+  @media (max-width: 768px) {
+    width: 320px;
+    padding: 14px 0px;
+    margin-bottom: 24px;
+  }
 `;
 
 const CppCreateButton = () => {

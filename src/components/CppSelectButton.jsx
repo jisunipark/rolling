@@ -17,9 +17,17 @@ const SelectButton = styled.button`
   letter-spacing: -0.16px;
   &:hover {
     width: 90px;
-    padding: 5px 14px;
+    padding: 6px 14px;
+    font-weight: 700;
+    background-color: #fff;
     border: 2px solid #861dee;
     color: #861dee;
+  }
+  @media (max-width: 768px) {
+    padding: 7px 14px;
+    &:hover {
+      padding: 5px 12px;
+    }
   }
 `;
 // eslint-disable-next-line
