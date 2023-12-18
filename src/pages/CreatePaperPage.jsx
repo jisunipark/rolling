@@ -1,9 +1,10 @@
 import { styled } from 'styled-components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import CppCreateButton from '../components/CppCreateButton';
 import CppSelectButton from '../components/CppSelectButton';
 import CppShowDiv from '../components/CppShowDiv';
+import getDataBackgroundImg from '../api';
 
 const CppForm = styled.form``;
 
@@ -13,7 +14,7 @@ const CppTopBox = styled.div`
   .target {
     font-size: 24px;
     font-weight: 700;
-    line-height: 42px; /* 175% */
+    line-height: 42px;
     letter-spacing: -0.24px;
     margin-bottom: 12px;
   }
@@ -84,6 +85,16 @@ const CreatePaperPage = () => {
   const [userName, setUserName] = useState('');
   // input 값이 없을때 error 메세지 출력
   const [error, setError] = useState(null);
+  const [backgroundImgs, setBackgroundImgs] = useState(null);
+
+  const loadBackgroundImgData = async () => {
+    const { imageUrls } = await getDataBackgroundImg();
+    console.log(imageUrls);
+    setBackgroundImgs(imageUrls);
+  };
+  useEffect(() => {
+    loadBackgroundImgData();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -92,7 +103,6 @@ const CreatePaperPage = () => {
     if (!userName) {
       setError('값을 입력해 주세요.');
     } else {
-      // 값이 있으면 에러 상태 초기화 및 로그 출력
       setError(null);
       console.log(userName);
     }
@@ -126,7 +136,7 @@ const CreatePaperPage = () => {
             </div>
             <div>
               <CppSelectButton setIsColor={setIsColor} />
-              <CppShowDiv isColor={isColor} />
+              <CppShowDiv backgroundImgs={backgroundImgs} isColor={isColor} />
             </div>
             <CppCreateButton />
           </CppBotBox>
