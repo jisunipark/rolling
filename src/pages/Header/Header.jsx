@@ -13,6 +13,3 @@ const Headers = () => {
 };
 
 export default Headers;
-
-// git remote update
-// git checkout -t origin/develop

@@ -35,6 +35,12 @@ export const Testdiv = styled.div`
   @media screen and (max-width: 1248px) {
     padding: 0px 24px;
   }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    padding: 0px;
+  }
 `;
 
 export const HeaderService = styled.div`
@@ -43,6 +49,10 @@ export const HeaderService = styled.div`
   display: flex;
   align-items: center;
   width: 1207px;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 export const HeaderServiceMans = styled.div`
@@ -70,6 +80,11 @@ export const HeaderServiceName = styled.h1`
   @media screen and (max-width: 1248px) {
     width: 100%;
   }
+  @media screen and (max-width: 767px) {
+    display: flex;
+    padding: 12px 20px;
+    align-items: center;
+  }
 `;
 
 export const HeaderServiceImgA = styled.img`
@@ -88,13 +103,23 @@ export const HeaderServiceImgB = styled.img`
   width: 28px;
   height: 28px;
 `;
-export const HeaderServiceImgC = styled.img`
+export const HeaderServiceImgC = styled.div`
+  align-items: center;
+  justify-content: center;
+  display: flex;
   position: absolute;
   left: -22px;
   border-radius: 140px;
   border: 1.4px solid #fff;
   width: 28px;
   height: 28px;
+  color: #484848;
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 150% */
+  background-color: white;
 `;
 export const HeaderServiceMessageDiv = styled.div`
   margin-left: 11px;
@@ -145,6 +170,9 @@ export const HeaderServiceEmoji = styled.div`
   align-items: center;
   border-radius: 32px;
   background: rgba(0, 0, 0, 0.54);
+  @media screen and (max-width: 767px) {
+    padding: 4px 8px;
+  }
 `;
 
 export const HeaderServiceEmojiCount = styled.p`
@@ -190,13 +218,19 @@ export const HeaderServiceEmojiToggle = styled.div`
   background: #fff;
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
   position: absolute;
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 16px;
+    left: 1px;
+  }
 `;
 
-export const HeaderServiceEmojiAdd = styled.button`
+export const HeaderServiceEmojiAdd = styled.div`
   border-radius: 6px;
   border: 1px solid var(--gray-300, #ccc);
   background: var(--white, #fff);
   display: flex;
+  position: relative;
   padding: 6px 16px;
   justify-content: center;
   align-items: center;
@@ -204,8 +238,15 @@ export const HeaderServiceEmojiAdd = styled.button`
   cursor: pointer;
   margin-left: 8px;
   @media screen and (max-width: 1248px) {
-    width: 200px;
+    width: 80px;
     padding: 6px 8px;
+  }
+  @media screen and (max-width: 767px) {
+    p {
+      display: none;
+    }
+    width: auto;
+    margin-left: 2px;
   }
 `;
 
@@ -246,12 +287,21 @@ export const HeaderServiceURLToggle = styled.div`
   align-items: flex-start;
 `;
 
+export const HeaderServiceURLShareMenuKaKao = styled.div`
+  display: flex;
+  width: 138px;
+  padding: 12px 16px;
+  align-items: center;
+  gap: 10px;
+`;
+
 export const HeaderServiceURLShareMenu = styled.div`
   display: flex;
   width: 138px;
   padding: 12px 16px;
   align-items: center;
   gap: 10px;
+  background: var(--gray-100, #f6f6f6);
 `;
 
 // --------------- CardList ------ //
@@ -265,6 +315,15 @@ export const CardContiner = styled.li`
   border-radius: 16px;
   background: var(--white, #fff);
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &:active {
+    background-color: rgba(243, 243, 243);
+  }
   @media screen and (max-width: 1248px) {
     width: 100%;
   }
@@ -280,6 +339,10 @@ export const CardCreateContiner = styled.li`
   border-radius: 16px;
   background: var(--white, #fff);
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
+
+  &:hover {
+    transform: translateY(-5px);
+  }
   @media screen and (max-width: 1248px) {
     width: 100%;
   }
@@ -297,11 +360,13 @@ export const CreateButton = styled.button`
   background: var(--gray-500, #555);
 `;
 
-export const MainContent = styled.div`
-  position: relative;
-  background: var(--orange-200, #ffe2ad);
-  width: 100%;
-`;
+// export const MainContent = styled.div`
+//   position: relative;
+//   background-color: ${(props) => props.backgroundColor || 'transparent'};
+//   background-image: ${(props) =>
+//     props.backgroundColor ? 'none' : `url(${props.backgroundImageURL})`};
+//   width: 100%;
+// `;
 
 export const MainUl = styled.ul`
   padding: 113px 0px;
@@ -324,6 +389,7 @@ export const MainUl = styled.ul`
   }
   @media screen and (max-width: 767px) {
     grid-template-columns: 1fr;
+    padding: 128px 24px;
   }
 `;
 
@@ -483,14 +549,24 @@ export const CardDeletedFlex = styled.div`
 // URL눌렸을때 나오는 문구
 
 export const Toast = styled.div`
+  width: 524px;
+  z-index: 3;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  bottom: 70px;
+  right: 50%;
+  transform: translateX(50%);
   display: flex;
-  width: 320px;
   height: 64px;
   padding: 19px 30px;
   justify-content: center;
   align-items: flex-start;
-  gap: 49px;
-  flex-shrink: 0;
+  gap: 253px;
+  @media screen and (max-width: 768px) {
+    width: 320px;
+    gap: 49px;
+  }
 `;
 
 export const ToastText = styled.p`
@@ -507,4 +583,28 @@ export const ToastCompleted = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+  color: var(--white, #fff);
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.16px;
+`;
+
+// EmojiPicker라이브러리
+// 미디어쿼리 일단 임시방편으로 이렇게 처리함.
+export const HeaderServiceEmojiPicker = styled.div`
+  right: 1px;
+  top: 50px;
+  z-index: 2;
+  position: absolute;
+  @media screen and (max-width: 768px) {
+    right: 230px;
+    width: 100%;
+  }
+`;
+
+export const HeaderServiceMoblieFlex = styled.div`
+  display: flex;
 `;
