@@ -94,21 +94,6 @@ const StyledSection = styled.section`
     }
   }
 
-  & textarea {
-    width: 100%;
-    height: 211px;
-    position: relative;
-    padding: 16px;
-    resize: none;
-  }
-
-  & .text-editor {
-    width: 720px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    border-right-style: 1px solid #ccc;
-  }
-
   &.toggle-optons > button {
     margin: 0;
     padding: 0;
@@ -122,6 +107,40 @@ const StyledSection = styled.section`
   & button > img {
     width: 16px;
     height: 16px;
+  }
+
+  & .quill {
+    width: 720px;
+  }
+
+  & .ql-toolbar {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    width: 100%;
+    height: 49px;
+    border-radius: 8px 8px 0px 0px;
+    background: #eee;
+    gap: 14px;
+
+    & .ql-formats {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      gap: 2px;
+    }
+  }
+
+  & .ql-container {
+    width: 100%;
+    height: 211px;
+    padding: 16px;
+    border-radius: 0px 0px 8px 8px;
+    resize: none;
+
+    & .ql-editor {
+      padding: 0;
+    }
   }
 `;
 

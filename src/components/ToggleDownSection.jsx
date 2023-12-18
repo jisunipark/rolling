@@ -21,6 +21,7 @@ const ToggleDownSection = ({ children, optionType, last }) => {
     e.target.classList.toggle('focus');
   };
 
+  // TODO 토글 다운 옵션 외부 클릭해도 닫히지
   const handleCloseOptions = (e) => {
     if (
       isOpen &&
