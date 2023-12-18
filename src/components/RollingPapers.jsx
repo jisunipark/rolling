@@ -63,9 +63,13 @@ const StyledRollingPapers = styled.div`
           transition: all 0.5s;
           @media (max-width: 767px) {
             gap: 12px;
+            width: 100%;
+            transform: unset;
           }
           @media (min-width: 768px) and (max-width: 1247px) {
             gap: 20px;
+            width: 100%;
+            transform: unset;
           }
           @media (min-width: 1248px) {
             max-width: 1160px;
@@ -118,12 +122,19 @@ const RollingPapers = ({ items, list }) => {
   const slider = useRef();
   const sliderBtnLeft = useRef();
   const sliderBtnRight = useRef();
+  const getWindowWidth = () => {
+    return (
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth
+    );
+  };
 
   function updateButtonVisibility() {
     if (sliderBtnLeft.current && window.innerWidth > 1247) {
       sliderBtnLeft.current.style.display =
         currentIndex === 0 ? 'none' : 'block';
-    } else {
+    } else if (sliderBtnLeft.current) {
       sliderBtnLeft.current.style.display = 'none';
     }
 
@@ -131,14 +142,21 @@ const RollingPapers = ({ items, list }) => {
       const lastVisibleIndex = items.length - 4;
       sliderBtnRight.current.style.display =
         currentIndex === lastVisibleIndex ? 'none' : 'block';
-    } else {
+    } else if (sliderBtnRight.current) {
       sliderBtnRight.current.style.display = 'none';
     }
   }
-  useEffect(() => {
-    // 슬라이더 및 버튼 가시성 초기화
-    updateButtonVisibility();
-  }, []);
+  window.addEventListener('resize', updateButtonVisibility);
+  // useEffect(() => {
+  //   // 슬라이더 및 버튼 가시성 초기화
+  //   updateButtonVisibility();
+  // }, []);
+
+  // function xValueReset() {
+  //   if (window.innerWidth > 1247) {
+  //     return
+  //   }
+  // }
 
   useEffect(() => {
     // currentIndex가 변경될 때 버튼 가시성 업데이트
@@ -153,12 +171,41 @@ const RollingPapers = ({ items, list }) => {
     }
   }
 
-  useEffect(() => {
-    // currentIndex 또는 items가 변경될 때 슬라이더 위치 업데이트
-    const slideWidth = slider.current.querySelector('.slide').offsetWidth + 20;
-    const translateXValue = -currentIndex * slideWidth;
+  // useEffect(() => {
+  //   // currentIndex 또는 items가 변경될 때 슬라이더 위치 업데이트
+  //   const slideWidth = slider.current.querySelector('.slide').offsetWidth + 20;
+  //   const translateXValue = -currentIndex * slideWidth;
+  //   if (window.innerWidth <= 1247) {
+  //     console.log(window.innerWidth);
+  //     slider.current.style.transform = `translateX(0px)`;
+  //   } else {
+  //     console.log(window.innerWidth);
+  //     slider.current.style.transform = `translateX(${translateXValue}px)`;
+  //   }
+  // }, [currentIndex, items, window.innerWidth]);
 
-    slider.current.style.transform = `translateX(${translateXValue}px)`;
+  useEffect(() => {
+    const updateSliderPosition = () => {
+      const slideWidth =
+        slider.current.querySelector('.slide').offsetWidth + 20;
+      const translateXValue = -currentIndex * slideWidth;
+      if (window.innerWidth <= 1247) {
+        slider.current.style.transform = `translateX(0px)`;
+      } else {
+        slider.current.style.transform = `translateX(${translateXValue}px)`;
+      }
+    };
+
+    // 이벤트 리스너를 연결
+    window.addEventListener('resize', updateSliderPosition);
+
+    // 초기 업데이트
+    updateSliderPosition();
+
+    // 컴포넌트가 언마운트될 때 이벤트 리스너 정리
+    return () => {
+      window.removeEventListener('resize', updateSliderPosition);
+    };
   }, [currentIndex, items]);
 
   return (
