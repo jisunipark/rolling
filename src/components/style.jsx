@@ -7,6 +7,10 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 50px;
+
+  @media (max-width: 767px) {
+    width: 320px;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -18,6 +22,9 @@ const StyledButton = styled.button`
   border-radius: 12px;
   background-color: #9935ff;
   color: #fff;
+  @media (max-width: 767px) {
+    width: 320px;
+  }
 `;
 
 const StyledSection = styled.section`
@@ -137,6 +144,9 @@ const StyledSection = styled.section`
 
   & .quill {
     width: 720px;
+    @media (max-width: 767px) {
+      width: 320px;
+    }
   }
 
   & .ql-toolbar {
@@ -148,6 +158,10 @@ const StyledSection = styled.section`
     border-radius: 8px 8px 0px 0px;
     background: #eee;
     gap: 14px;
+    @media (max-width: 767px) {
+      gap: 2px;
+      justify-content: center;
+    }
 
     & .ql-formats {
       display: flex;
@@ -167,19 +181,34 @@ const StyledSection = styled.section`
     & .ql-editor {
       padding: 0;
     }
+
+    @media (max-width: 767px) {
+      & input,
+      & button {
+        width: 320px;
+      }
+    }
   }
 `;
 
 const ProfileImgList = styled.div`
   display: flex;
   gap: 4px;
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const RoundImg = styled.img`
+  display: inline-block;
   width: 56px;
   height: 56px;
   border-radius: 100px;
   border: 1px solid #eee;
+  @media (max-width: 767px) {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 const FlexDiv = styled.div`
@@ -199,6 +228,9 @@ const ProfileImgInput = styled.div`
   display: flex;
   align-items: center;
   gap: 32px;
+  @media (max-width: 767px) {
+    gap: 20px;
+  }
 `;
 
 export {

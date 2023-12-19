@@ -57,6 +57,7 @@ const ProfileImgInputSection = ({ children }) => {
               alt="샘플 프로필 이미지"
               onClick={handleChangeProfileImg}
             />
+            <br />
             <RoundImg
               src={SampleImg2}
               alt="샘플 프로필 이미지"
