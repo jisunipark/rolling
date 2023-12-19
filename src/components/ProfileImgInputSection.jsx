@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import styled from 'styled-components';
 import StyledSection from './StyledSection';
 import DefaultProfileImg from '../assets/images/default-profile-img.png';
@@ -10,6 +11,10 @@ const ProfileImgList = styled.div`
 `;
 
 const RoundImg = styled.img`
+  /*   background-image: url(${SampleImg1});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
   width: 56px;
   height: 56px;
   border-radius: 100px;
@@ -36,6 +41,12 @@ const ProfileImgInput = styled.div`
 `;
 
 const ProfileImgInputSection = ({ children }) => {
+  const imgRef = useRef();
+
+  const handleChangeProfileImg = (e) => {
+    imgRef.current.src = e.target.src;
+  };
+
   return (
     <StyledSection>
       <label htmlFor="profileImgURL">{children}</label>
@@ -45,20 +56,62 @@ const ProfileImgInputSection = ({ children }) => {
           alt="기본 프로필 이미지"
           width="80px"
           height="80px"
+          ref={imgRef}
+          className="selected-profile-img"
         />
         <FlexDiv>
           <span>프로필 이미지를 선택해 주세요!</span>
           <ProfileImgList>
-            <RoundImg src={SampleImg1} alt="샘플 프로필 이미지" />
-            <RoundImg src={SampleImg2} alt="샘플 프로필 이미지" />
-            <RoundImg src={SampleImg1} alt="샘플 프로필 이미지" />
-            <RoundImg src={SampleImg2} alt="샘플 프로필 이미지" />
-            <RoundImg src={SampleImg1} alt="샘플 프로필 이미지" />
-            <RoundImg src={SampleImg2} alt="샘플 프로필 이미지" />
-            <RoundImg src={SampleImg1} alt="샘플 프로필 이미지" />
-            <RoundImg src={SampleImg2} alt="샘플 프로필 이미지" />
-            <RoundImg src={SampleImg1} alt="샘플 프로필 이미지" />
-            <RoundImg src={SampleImg2} alt="샘플 프로필 이미지" />
+            <RoundImg
+              src={SampleImg1}
+              alt="샘플 프로필 이미지"
+              onClick={handleChangeProfileImg}
+            />
+            <RoundImg
+              src={SampleImg2}
+              alt="샘플 프로필 이미지"
+              onClick={handleChangeProfileImg}
+            />
+            <RoundImg
+              src={SampleImg1}
+              alt="샘플 프로필 이미지"
+              onClick={handleChangeProfileImg}
+            />
+            <RoundImg
+              src={SampleImg2}
+              alt="샘플 프로필 이미지"
+              onClick={handleChangeProfileImg}
+            />
+            <RoundImg
+              src={SampleImg1}
+              alt="샘플 프로필 이미지"
+              onClick={handleChangeProfileImg}
+            />
+            <RoundImg
+              src={SampleImg2}
+              alt="샘플 프로필 이미지"
+              onClick={handleChangeProfileImg}
+            />
+            <RoundImg
+              src={SampleImg1}
+              alt="샘플 프로필 이미지"
+              onClick={handleChangeProfileImg}
+            />
+            <RoundImg
+              src={SampleImg2}
+              alt="샘플 프로필 이미지"
+              onClick={handleChangeProfileImg}
+            />
+            <RoundImg
+              src={SampleImg1}
+              alt="샘플 프로필 이미지"
+              onClick={handleChangeProfileImg}
+            />
+            <RoundImg
+              src={SampleImg2}
+              alt="샘플 프로필 이미지"
+              onClick={handleChangeProfileImg}
+            />
           </ProfileImgList>
         </FlexDiv>
       </ProfileImgInput>

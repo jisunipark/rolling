@@ -109,6 +109,12 @@ const StyledSection = styled.section`
     height: 16px;
   }
 
+  & .selected-profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+  }
+
   & .quill {
     width: 720px;
   }
