@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import CppCreateButton from '../components/CppCreateButton';
 import CppSelectButton from '../components/CppSelectButton';
 import CppShowDiv from '../components/CppShowDiv';
-import getDataBackgroundImg from '../api';
+import { getDataBackgroundImg, postUserData } from '../api';
 
 const CppForm = styled.form``;
 
@@ -79,26 +79,39 @@ const CppBotBox = styled.div`
   }
 `;
 
+const INITIAL_VALUES = {
+  team: '',
+  name: '',
+  backgroundColor: '',
+  backgroundImageURL: '',
+};
+
 const CreatePaperPage = () => {
   const [isColor, setIsColor] = useState(true);
-  // input
   const [userName, setUserName] = useState('');
-  // input 값이 없을때 error 메세지 출력
   const [error, setError] = useState(null);
   const [backgroundImgs, setBackgroundImgs] = useState(null);
+  const [values, setValues] = useState(INITIAL_VALUES);
 
   const loadBackgroundImgData = async () => {
     const { imageUrls } = await getDataBackgroundImg();
-    console.log(imageUrls);
     setBackgroundImgs(imageUrls);
   };
+
   useEffect(() => {
     loadBackgroundImgData();
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
+    const formData = new FormData();
+    formData.append('team', values.team);
+    formData.append('name', values.name);
+    formData.append('backgroundColor', values.backgroundColor);
+    formData.append('backgroundImageURL', values.backgroundImageURL);
+    postUserData(formData);
+    // 여기 좀더 손봐야 한다.
+    setValues(INITIAL_VALUES);
     // 값이 없으면 에러 메시지 표시
     if (!userName) {
       setError('값을 입력해 주세요.');
@@ -138,7 +151,7 @@ const CreatePaperPage = () => {
               <CppSelectButton setIsColor={setIsColor} />
               <CppShowDiv backgroundImgs={backgroundImgs} isColor={isColor} />
             </div>
-            <CppCreateButton />
+            <CppCreateButton type="submit" />
           </CppBotBox>
         </CppForm>
       </main>

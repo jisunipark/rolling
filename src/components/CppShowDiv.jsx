@@ -1,8 +1,14 @@
-/* eslint-disable react/no-array-index-key */
 /* eslint-disable array-callback-return */
 import { styled } from 'styled-components';
-// eslint-disable-next-line
+import { useState } from 'react';
 import enabled from '../assets/images/Enabled.svg';
+
+const COLOR_CHIPS = [
+  { id: 1, option: 'beige' },
+  { id: 2, option: 'purple' },
+  { id: 3, option: 'blue' },
+  { id: 4, option: 'green' },
+];
 
 const ColorDiv = styled.div`
   margin: 45px 0;
@@ -18,7 +24,6 @@ const ColorDiv = styled.div`
     gap: 12px;
   }
 `;
-
 const ImgDiv = styled(ColorDiv)``;
 
 const ShowColorDiv = styled.div`
@@ -28,62 +33,68 @@ const ShowColorDiv = styled.div`
   width: 168px;
   height: 168px;
   border-radius: 16px;
-  img {
-    visibility: hidden;
-  }
-  &:hover {
-    img {
-      visibility: visible;
-    }
-  }
   @media (max-width: 768px) {
     width: 154px;
     height: 154px;
   }
 `;
 
-const ShowColorDiv1 = styled(ShowColorDiv)`
-  background-color: #ffe2ad;
-`;
-const ShowColorDiv2 = styled(ShowColorDiv)`
-  background-color: #ecd9ff;
-`;
-const ShowColorDiv3 = styled(ShowColorDiv)`
-  background-color: #b1e4ff;
-`;
-const ShowColorDiv4 = styled(ShowColorDiv)`
-  background-color: #d0f5c3;
-`;
-
 const ShowImgDiv = styled(ShowColorDiv)`
   background-image: url(${(props) => props.src});
 `;
 
-// eslint-disable-next-line
-const CppShowDiv = ({isColor,backgroundImgs}) => {
+const StyledDiv = styled(ShowColorDiv)`
+  &.beige {
+    background-color: #ffe2ad;
+  }
+  &.purple {
+    background-color: #ecd9ff;
+  }
+  &.green {
+    background-color: #b1e4ff;
+  }
+  &.blue {
+    background-color: #d0f5c3;
+  }
+`;
+
+const CppShowDiv = ({ isColor, backgroundImgs }) => {
+  const [selectColor, setSelectColor] = useState('beige');
+  const handleColorChange = (option) => {
+    setSelectColor(option);
+  };
+  const [selectImg, setSelectImg] = useState(0);
+  console.log(selectImg);
+  const handleImgChange = (index) => {
+    setSelectImg(index);
+  };
+
   return (
     <div>
       {isColor ? (
         <ColorDiv>
-          <ShowColorDiv1>
-            <img src={enabled} alt="" />
-          </ShowColorDiv1>
-          <ShowColorDiv2>
-            <img src={enabled} alt="" />
-          </ShowColorDiv2>
-          <ShowColorDiv3>
-            <img src={enabled} alt="" />
-          </ShowColorDiv3>
-          <ShowColorDiv4>
-            <img src={enabled} alt="" />
-          </ShowColorDiv4>
+          {COLOR_CHIPS.map((item) => (
+            <StyledDiv
+              key={item.id}
+              className={item.option}
+              onClick={() => handleColorChange(item.option)}
+            >
+              {selectColor === item.option && (
+                <img src={enabled} alt="체크표시" />
+              )}
+            </StyledDiv>
+          ))}
         </ColorDiv>
       ) : (
         <ImgDiv>
-          {/* 왜 {} 사용하면안되나?   */}
           {backgroundImgs.map((img, index) => (
-            <ShowImgDiv key={index} src={img}>
-              <img src={enabled} alt="" />
+            <ShowImgDiv
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              src={img}
+              onClick={() => handleImgChange(index)}
+            >
+              {selectImg === index && <img src={enabled} alt="체크표시" />}
             </ShowImgDiv>
           ))}
         </ImgDiv>
