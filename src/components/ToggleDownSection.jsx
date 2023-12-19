@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import StyledSection from './StyledSection';
+import { StyledSection } from './style';
 import ToggleArrowDown from '../assets/images/toggle-arrow-down.svg';
 import ToggleArrowUp from '../assets/images/toggle-arrow-up.svg';
 

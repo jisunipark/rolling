@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import StyledSection from './StyledSection';
+import { StyledSection } from './style';
 
 const TextInputSection = ({ children }) => {
   const inputRef = useRef();

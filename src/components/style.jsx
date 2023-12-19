@@ -150,4 +150,35 @@ const StyledSection = styled.section`
   }
 `;
 
-export default StyledSection;
+const ProfileImgList = styled.div`
+  display: flex;
+  gap: 4px;
+`;
+
+const RoundImg = styled.img`
+  width: 56px;
+  height: 56px;
+  border-radius: 100px;
+  border: 1px solid #eee;
+`;
+
+const FlexDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  & span {
+    color: #555;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+`;
+
+const ProfileImgInput = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 32px;
+`;
+
+export { StyledSection, ProfileImgList, RoundImg, FlexDiv, ProfileImgInput };

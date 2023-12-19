@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import StyledSection from './StyledSection';
+import { StyledSection } from './style';
 
 // https://mingeesuh.tistory.com/entry/Quill-React-%EC%97%90%EB%94%94%ED%84%B0-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%97%85%EB%A1%9C%EB%93%9C-%EB%B0%8F-%EC%82%AC%EC%9D%B4%EC%A6%88-%EC%A1%B0%EC%A0%88
 
@@ -38,12 +38,10 @@ const modules = {
 
 // React Quill 라이브러리 사용 https://www.npmjs.com/package/react-quill?activeTab=readme
 // TODO 글씨가 안 써짐..
-const Editor = ({ placeholder, value, ...rest }) => {
+const Editor = ({ value }) => {
   return (
     // 테마 (bubble, snow, custom) https://quilljs.com/docs/themes/
     <ReactQuill
-      // {...rest}
-      // placeholder="내용을 입력해 주세요."
       value={value || ''}
       theme="snow"
       modules={modules}
