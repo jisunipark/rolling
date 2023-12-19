@@ -1,5 +1,25 @@
 import styled from 'styled-components';
 
+const StyledContainer = styled.div`
+  margin: 47px auto 62px auto;
+  width: 720px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+`;
+
+const StyledButton = styled.button`
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 24px;
+  padding: 14px 24px;
+  width: 720px;
+  border-radius: 12px;
+  background-color: #9935ff;
+  color: #fff;
+`;
+
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -181,4 +201,12 @@ const ProfileImgInput = styled.div`
   gap: 32px;
 `;
 
-export { StyledSection, ProfileImgList, RoundImg, FlexDiv, ProfileImgInput };
+export {
+  StyledContainer,
+  StyledButton,
+  StyledSection,
+  ProfileImgList,
+  RoundImg,
+  FlexDiv,
+  ProfileImgInput,
+};
