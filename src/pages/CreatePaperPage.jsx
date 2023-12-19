@@ -79,19 +79,13 @@ const CppBotBox = styled.div`
   }
 `;
 
-const INITIAL_VALUES = {
-  team: '',
-  name: '',
-  backgroundColor: '',
-  backgroundImageURL: '',
-};
-
 const CreatePaperPage = () => {
   const [isColor, setIsColor] = useState(true);
   const [userName, setUserName] = useState('');
   const [error, setError] = useState(null);
   const [backgroundImgs, setBackgroundImgs] = useState(null);
-  const [values, setValues] = useState(INITIAL_VALUES);
+  const [selectImg, setSelectImg] = useState('');
+  const [selectColor, setSelectColor] = useState('beige');
 
   const loadBackgroundImgData = async () => {
     const { imageUrls } = await getDataBackgroundImg();
@@ -104,15 +98,13 @@ const CreatePaperPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('team', values.team);
-    formData.append('name', values.name);
-    formData.append('backgroundColor', values.backgroundColor);
-    formData.append('backgroundImageURL', values.backgroundImageURL);
-    postUserData(formData);
-    // 여기 좀더 손봐야 한다.
-    setValues(INITIAL_VALUES);
-    // 값이 없으면 에러 메시지 표시
+    const sendData = {
+      team: '2-8',
+      name: userName,
+      backgroundColor: selectColor,
+      backgroundImageURL: selectImg,
+    };
+    postUserData(sendData);
     if (!userName) {
       setError('값을 입력해 주세요.');
     } else {
@@ -148,8 +140,15 @@ const CreatePaperPage = () => {
               </p>
             </div>
             <div>
-              <CppSelectButton setIsColor={setIsColor} />
-              <CppShowDiv backgroundImgs={backgroundImgs} isColor={isColor} />
+              <CppSelectButton setIsColor={setIsColor} isColor={isColor} />
+              <CppShowDiv
+                backgroundImgs={backgroundImgs}
+                isColor={isColor}
+                selectColor={selectColor}
+                setSelectColor={setSelectColor}
+                selectImg={selectImg}
+                setSelectImg={setSelectImg}
+              />
             </div>
             <CppCreateButton type="submit" />
           </CppBotBox>

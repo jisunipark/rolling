@@ -1,7 +1,7 @@
 /* eslint-disable array-callback-return */
 import { styled } from 'styled-components';
-import { useState } from 'react';
 import enabled from '../assets/images/Enabled.svg';
+import CppShowImgDiv from './CppShowImgDiv';
 
 const COLOR_CHIPS = [
   { id: 1, option: 'beige' },
@@ -24,7 +24,6 @@ const ColorDiv = styled.div`
     gap: 12px;
   }
 `;
-const ImgDiv = styled(ColorDiv)``;
 
 const ShowColorDiv = styled.div`
   display: flex;
@@ -37,10 +36,6 @@ const ShowColorDiv = styled.div`
     width: 154px;
     height: 154px;
   }
-`;
-
-const ShowImgDiv = styled(ShowColorDiv)`
-  background-image: url(${(props) => props.src});
 `;
 
 const StyledDiv = styled(ShowColorDiv)`
@@ -58,15 +53,16 @@ const StyledDiv = styled(ShowColorDiv)`
   }
 `;
 
-const CppShowDiv = ({ isColor, backgroundImgs }) => {
-  const [selectColor, setSelectColor] = useState('beige');
+const CppShowDiv = ({
+  isColor,
+  backgroundImgs,
+  selectColor,
+  setSelectColor,
+  selectImg,
+  setSelectImg,
+}) => {
   const handleColorChange = (option) => {
     setSelectColor(option);
-  };
-  const [selectImg, setSelectImg] = useState(0);
-  console.log(selectImg);
-  const handleImgChange = (index) => {
-    setSelectImg(index);
   };
 
   return (
@@ -86,18 +82,11 @@ const CppShowDiv = ({ isColor, backgroundImgs }) => {
           ))}
         </ColorDiv>
       ) : (
-        <ImgDiv>
-          {backgroundImgs.map((img, index) => (
-            <ShowImgDiv
-              // eslint-disable-next-line react/no-array-index-key
-              key={index}
-              src={img}
-              onClick={() => handleImgChange(index)}
-            >
-              {selectImg === index && <img src={enabled} alt="체크표시" />}
-            </ShowImgDiv>
-          ))}
-        </ImgDiv>
+        <CppShowImgDiv
+          backgroundImgs={backgroundImgs}
+          selectImg={selectImg}
+          setSelectImg={setSelectImg}
+        />
       )}
     </div>
   );
