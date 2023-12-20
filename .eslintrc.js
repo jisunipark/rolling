@@ -28,11 +28,11 @@ module.exports = {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'no-unused-vars': 'warn',
-    'prettier/prettier': ['error', { endOfLine: 'auto' }],
     'react/function-component-definition': [
       2,
       { namedComponents: 'arrow-function' },
     ],
+
 
     'jsx-a11y/label-has-associated-control': [
       2,
@@ -42,7 +42,6 @@ module.exports = {
     ],
     'react/jsx-no-useless-fragment': 'off',
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
-    // eslint-disable-next-line no-dupe-keys
     'prettier/prettier': [
       'error',
       {
@@ -50,5 +49,8 @@ module.exports = {
         singleQuote: true,
       },
     ],
+
+    'react/prop-type': 'off',
+
   },
 };
