@@ -113,9 +113,10 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+    cursor: pointer;
   }
 
-  a:hover {
+  button {
     cursor: pointer;
   }
 
