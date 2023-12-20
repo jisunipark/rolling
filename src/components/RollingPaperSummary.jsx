@@ -28,8 +28,12 @@ const shakeX = keyframes`
 const StyledLink = styled(Link)`
   flex-shrink: 0;
   box-sizing: border-box;
-  background-image: url(${(props) => props.item.backgroundImageURL});
+  background-image: ${(props) =>
+    props.item.backgroundImageURL
+      ? `linear-gradient(180deg, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0.54) 100%), url(${props.item.backgroundImageURL})`
+      : null};
   background-color: ${(props) => BackgroundColors[props.item.backgroundColor]};
+  background-size: cover;
   flex-direction: column;
   justify-content: space-between;
   display: flex;
@@ -105,6 +109,9 @@ const StyledLink = styled(Link)`
     right: 0;
     bottom: 0;
     z-index: 1;
+    @media (max-width: 768px) {
+      right: -35px;
+    }
   }
 
   @media (min-width: 768px) {
@@ -158,9 +165,10 @@ const CommenterImages = styled.div`
 `;
 
 const RollingPaperSummary = ({ item }) => {
+  const DESTINATION = `/post/${item.id}`;
   return (
     <div className="slide">
-      <StyledLink item={item} to={`/post/${item.id}`}>
+      <StyledLink item={item} to={DESTINATION}>
         {item.backgroundImageURL ? null : (
           <img
             src={(() => {
@@ -174,7 +182,7 @@ const RollingPaperSummary = ({ item }) => {
                 case 'beige':
                   return beigeSvg;
                 default:
-                  return ''; // 기본값 설정
+                  return '';
               }
             })()}
             alt="color pattern"

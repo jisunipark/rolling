@@ -61,12 +61,12 @@ const StyledRollingPapers = styled.div`
           flex-direction: row;
           transition-timing-function: cubic-bezier(0, 0.99, 0.58, 1);
           transition: all 0.5s;
-          @media (max-width: 767px) {
+          @media (max-width: 768px) {
             gap: 12px;
             width: 100%;
             transform: unset;
           }
-          @media (min-width: 768px) and (max-width: 1247px) {
+          @media (min-width: 768px) and (max-width: 1248px) {
             gap: 20px;
             width: 100%;
             transform: unset;
@@ -134,7 +134,7 @@ const RollingPapers = ({ items, list }) => {
     if (sliderBtnLeft.current && window.innerWidth > 1247) {
       sliderBtnLeft.current.style.display =
         currentIndex === 0 ? 'none' : 'block';
-    } else if (sliderBtnLeft.current) {
+    } /* if (sliderBtnLeft.current) */ else {
       sliderBtnLeft.current.style.display = 'none';
     }
 
@@ -142,24 +142,13 @@ const RollingPapers = ({ items, list }) => {
       const lastVisibleIndex = items.length - 4;
       sliderBtnRight.current.style.display =
         currentIndex === lastVisibleIndex ? 'none' : 'block';
-    } else if (sliderBtnRight.current) {
+    } /* if (sliderBtnRight.current)  */ else {
       sliderBtnRight.current.style.display = 'none';
     }
   }
   window.addEventListener('resize', updateButtonVisibility);
-  // useEffect(() => {
-  //   // 슬라이더 및 버튼 가시성 초기화
-  //   updateButtonVisibility();
-  // }, []);
-
-  // function xValueReset() {
-  //   if (window.innerWidth > 1247) {
-  //     return
-  //   }
-  // }
 
   useEffect(() => {
-    // currentIndex가 변경될 때 버튼 가시성 업데이트
     updateButtonVisibility();
   }, [currentIndex, window.innerWidth]);
 
@@ -171,21 +160,15 @@ const RollingPapers = ({ items, list }) => {
     }
   }
 
-  // useEffect(() => {
-  //   // currentIndex 또는 items가 변경될 때 슬라이더 위치 업데이트
-  //   const slideWidth = slider.current.querySelector('.slide').offsetWidth + 20;
-  //   const translateXValue = -currentIndex * slideWidth;
-  //   if (window.innerWidth <= 1247) {
-  //     console.log(window.innerWidth);
-  //     slider.current.style.transform = `translateX(0px)`;
-  //   } else {
-  //     console.log(window.innerWidth);
-  //     slider.current.style.transform = `translateX(${translateXValue}px)`;
-  //   }
-  // }, [currentIndex, items, window.innerWidth]);
-
   useEffect(() => {
     const updateSliderPosition = () => {
+      if (
+        !slider.current ||
+        !slider.current.querySelector('.slide') ||
+        !slider.current.style
+      ) {
+        return;
+      }
       const slideWidth =
         slider.current.querySelector('.slide').offsetWidth + 20;
       const translateXValue = -currentIndex * slideWidth;
@@ -196,13 +179,10 @@ const RollingPapers = ({ items, list }) => {
       }
     };
 
-    // 이벤트 리스너를 연결
     window.addEventListener('resize', updateSliderPosition);
 
-    // 초기 업데이트
     updateSliderPosition();
 
-    // 컴포넌트가 언마운트될 때 이벤트 리스너 정리
     return () => {
       window.removeEventListener('resize', updateSliderPosition);
     };
@@ -212,9 +192,9 @@ const RollingPapers = ({ items, list }) => {
     <StyledRollingPapers>
       <main>
         {list ? (
-          <p className="title">인기 롤링 페이퍼 🔥</p>
+          <p className="title">인기 롤링 페이퍼 TOP10🔥</p>
         ) : (
-          <p className="title">최근에 만든 롤링 페이퍼 ⭐️</p>
+          <p className="title">최근에 만든 롤링 페이퍼 TOP10⭐️</p>
         )}
         <div className="Overgrid">
           <div className="grids">
