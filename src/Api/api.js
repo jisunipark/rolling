@@ -1,3 +1,4 @@
+
 const getInformation = async () => {
   try {
     const response = await fetch(
@@ -12,4 +13,6 @@ const getInformation = async () => {
   return;
 };
 
-export default getInformation;
+export defalut getInformation;
+
+
