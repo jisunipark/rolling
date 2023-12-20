@@ -84,7 +84,7 @@ const CreatePaperPage = () => {
   const [userName, setUserName] = useState('');
   const [error, setError] = useState(null);
   const [backgroundImgs, setBackgroundImgs] = useState(null);
-  const [selectImg, setSelectImg] = useState('');
+  const [selectImg, setSelectImg] = useState(null);
   const [selectColor, setSelectColor] = useState('beige');
 
   const loadBackgroundImgData = async () => {

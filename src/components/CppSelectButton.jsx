@@ -54,7 +54,6 @@ const SelectButtonPupple = styled.button`
 
 // eslint-disable-next-line
 const CppSelectButton = ({ setIsColor,isColor}) => {
-  console.log(isColor);
   const changeType = (type) => {
     setIsColor(type);
   };
