@@ -4,25 +4,25 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "airbnb",
-    "plugin:prettier/recommended",
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'airbnb',
+    'plugin:prettier/recommended',
   ],
   overrides: [
     {
       env: {
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: "script",
+        sourceType: 'script',
       },
     },
   ],
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
   rules: {
     'react/prop-types': 'off',
@@ -31,7 +31,7 @@ module.exports = {
     'prettier/prettier': ['error', { endOfLine: 'auto' }],
     'react/function-component-definition': [
       2,
-      { namedComponents: "arrow-function" },
+      { namedComponents: 'arrow-function' },
     ],
 
     'jsx-a11y/label-has-associated-control': [
@@ -42,10 +42,11 @@ module.exports = {
     ],
     'react/jsx-no-useless-fragment': 'off',
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
-    "prettier/prettier": [
-      "error",
+    // eslint-disable-next-line no-dupe-keys
+    'prettier/prettier': [
+      'error',
       {
-        endOfLine: "auto",
+        endOfLine: 'auto',
         singleQuote: true,
       },
     ],

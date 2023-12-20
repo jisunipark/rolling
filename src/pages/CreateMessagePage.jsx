@@ -4,6 +4,7 @@ import TextInputSection from '../components/TextInputSection';
 import ProfileImgInputSection from '../components/ProfileImgInputSection';
 import TextareaInputSection from '../components/TextareaInputSection';
 import ToggleDownSection from '../components/ToggleDownSection';
+import { fetchProfileImg } from '../Api/messageApi';
 
 const CreateMessagePage = () => {
   return (

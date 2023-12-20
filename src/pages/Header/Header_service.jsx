@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
 import EmojiPicker from 'emoji-picker-react';
+import { useState, useEffect } from 'react';
 import ArrowDown from '../../assets/images/arrow_down.png';
 import ArrowAdd from '../../assets/images/add-24.png';
 import Share from '../../assets/images/share-24.png';

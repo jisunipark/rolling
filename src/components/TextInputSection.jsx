@@ -31,10 +31,11 @@ const TextInputSection = ({ children }) => {
           type="text"
           id="sender"
           placeholder="이름을 입력해 주세요."
-          // onBlur={showErrorMessage}
           ref={inputRef}
         />
-        <p ref={pRef}>값을 입력해 주세요</p>
+        <p className="message" ref={pRef}>
+          값을 입력해 주세요
+        </p>
       </div>
     </StyledSection>
   );
