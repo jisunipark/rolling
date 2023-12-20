@@ -35,7 +35,8 @@ const ProfileImgInputSection = ({ children }) => {
   };
 
   const getData = async () => {
-    const { imageUrls } = await fetchProfileImg;
+    const { imageUrls } = await fetchProfileImg();
+    // console.log(imageUrls);
     setProfileImgs(imageUrls);
   };
 
@@ -43,12 +44,14 @@ const ProfileImgInputSection = ({ children }) => {
     getData();
   }, []);
 
+  // console.log(profileImgs);
+
   return (
     <StyledSection>
       <label htmlFor="profileImgURL">{children}</label>
       <ProfileImgInput>
         <img
-          src={DefaultProfileImg}
+          src={profileImgs[0]}
           alt="기본 프로필 이미지"
           width="80px"
           height="80px"
@@ -58,57 +61,15 @@ const ProfileImgInputSection = ({ children }) => {
         <FlexDiv>
           <span>프로필 이미지를 선택해 주세요!</span>
           <ProfileImgList>
-            {/* <RoundImg
-              src={profileImgs[0]}
-              alt="샘플 프로필 이미지"
-              onClick={handleChangeProfileImg}
-            /> */}
-            <RoundImg
-              src={SampleImg2}
-              alt="샘플 프로필 이미지"
-              onClick={handleChangeProfileImg}
-            />
-            <RoundImg
-              src={SampleImg1}
-              alt="샘플 프로필 이미지"
-              onClick={handleChangeProfileImg}
-            />
-            <RoundImg
-              src={SampleImg2}
-              alt="샘플 프로필 이미지"
-              onClick={handleChangeProfileImg}
-            />
-            <RoundImg
-              src={SampleImg1}
-              alt="샘플 프로필 이미지"
-              onClick={handleChangeProfileImg}
-            />
-            <br />
-            <RoundImg
-              src={SampleImg2}
-              alt="샘플 프로필 이미지"
-              onClick={handleChangeProfileImg}
-            />
-            <RoundImg
-              src={SampleImg1}
-              alt="샘플 프로필 이미지"
-              onClick={handleChangeProfileImg}
-            />
-            <RoundImg
-              src={SampleImg2}
-              alt="샘플 프로필 이미지"
-              onClick={handleChangeProfileImg}
-            />
-            <RoundImg
-              src={SampleImg1}
-              alt="샘플 프로필 이미지"
-              onClick={handleChangeProfileImg}
-            />
-            <RoundImg
-              src={SampleImg2}
-              alt="샘플 프로필 이미지"
-              onClick={handleChangeProfileImg}
-            />
+            {profileImgs.map((img) => {
+              return (
+                <RoundImg
+                  src={img}
+                  alt="샘플 프로필 이미지"
+                  onClick={handleChangeProfileImg}
+                />
+              );
+            })}
           </ProfileImgList>
         </FlexDiv>
       </ProfileImgInput>
