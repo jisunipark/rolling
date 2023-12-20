@@ -3,20 +3,20 @@ import CardListUl from './CardListUl';
 
 const MainContent = styled.div`
   position: relative;
-  background-color: ${({ MockData }) =>
-    MockData.backgroundColor || 'transparent'};
-  background-image: ${({ MockData }) =>
-    MockData.backgroundColor ? 'none' : `url(${MockData.backgroundImageURL})`};
+  background-color: ${({ Data }) => Data?.backgroundColor || 'transparent'};
+  background-image: ${({ Data }) =>
+    Data?.backgroundColor ? 'none' : `url(${Data?.backgroundImageURL})`};
   width: 100%;
+  height: 1080px;
+  @media screen and (max-width: 767px) {
+    height: 100%;
+  }
 `;
 
-// 이거 작업 성공하면 이 데이터가 내 본체 jsx에 들어가면됨.
-const Main = ({ MockData }) => {
-  console.log(MockData);
-
+const Main = ({ Data }) => {
   return (
-    <MainContent MockData={MockData}>
-      <CardListUl MockData={MockData} />
+    <MainContent Data={Data}>
+      <CardListUl Data={Data} />
     </MainContent>
   );
 };

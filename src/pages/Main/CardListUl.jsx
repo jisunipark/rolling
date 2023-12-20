@@ -3,15 +3,15 @@ import CardList from './CardList';
 import CardPlus from './CardPlus';
 import DeleteButton from './DeleteButton';
 
-const CardListUl = ({ MockData }) => {
-  const { recentMessages } = MockData;
+const CardListUl = ({ Data }) => {
+  const { recentMessages } = Data;
   return (
     <MainUl>
       <CardDeletedFlex>
         <DeleteButton />
       </CardDeletedFlex>
       <CardPlus />
-      {recentMessages.map((item) => {
+      {recentMessages?.map((item) => {
         return <CardList key={item.id} item={item} />;
       })}
     </MainUl>

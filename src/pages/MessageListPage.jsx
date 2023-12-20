@@ -1,16 +1,30 @@
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import HeaderUser from './Header/Header_service';
-import Headers from './Header/Header';
 import Main from './Main/Main';
-import Mock from '../mock.json';
+// import Mock from '../mock.json';
+import Header from '../components/Header';
+import QuestionPersonFetch from '../Api/api';
 
 const MessageListPage = () => {
-  // 목데이터 배열로 받아서 0번이지만 실제 api주소는 1개의 배열만 온다.
-  const MockData = Mock.results[0];
+  const [Data, setData] = useState([]);
+
+  const pill = async (userid) => {
+    const gyeom = await QuestionPersonFetch(userid);
+    setData(gyeom);
+  };
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    pill(id);
+  }, []);
+
   return (
     <>
-      <Headers />
+      <Header hidden="true" />
       <HeaderUser />
-      <Main MockData={MockData} />
+      <Main Data={Data} />
     </>
   );
 };
