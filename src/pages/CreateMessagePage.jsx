@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { StyledForm, StyledButton } from '../components/style';
 import TextInputSection from '../components/TextInputSection';
 import ProfileImgInputSection from '../components/ProfileImgInputSection';
 import TextareaInputSection from '../components/TextareaInputSection';
 import ToggleDownSection from '../components/ToggleDownSection';
-import { fetchProfileImg } from '../Api/messageApi';
+import { fetchProfileImg, fetchRecipient } from '../Api/messageApi';
 
 const CreateMessagePage = () => {
+  const [recipientId, setRecipientId] = useState('');
   const [sender, setSender] = useState(''); // 부모
   // 자식에게 필요한 것들을 부모에서 props로 전달
   const [profileImageURL, setProfileImageURL] = useState('');
@@ -21,11 +22,20 @@ const CreateMessagePage = () => {
   // console.log('content', content);
   // console.log('font', font);
 
+  const getRecipientId = async () => {
+    const { results } = await fetchRecipient();
+    setRecipientId(results.id);
+  };
+
+  useEffect(() => {
+    getRecipientId();
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const messageData = {
       team: '2-8',
-      recipientId: 0,
+      recipientId,
       sender,
       profileImageURL,
       relationship,
