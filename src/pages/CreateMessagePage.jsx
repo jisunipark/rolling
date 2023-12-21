@@ -5,7 +5,11 @@ import TextInputSection from '../components/TextInputSection';
 import ProfileImgInputSection from '../components/ProfileImgInputSection';
 import TextareaInputSection from '../components/TextareaInputSection';
 import ToggleDownSection from '../components/ToggleDownSection';
-import { fetchProfileImg, fetchRecipient } from '../Api/messageApi';
+import {
+  fetchProfileImg,
+  fetchRecipient,
+  createMessage,
+} from '../Api/messageApi';
 
 const CreateMessagePage = () => {
   const [recipientId, setRecipientId] = useState('');
@@ -24,6 +28,7 @@ const CreateMessagePage = () => {
 
   const getRecipientId = async () => {
     const { results } = await fetchRecipient();
+    console.log(results.id);
     setRecipientId(results.id);
   };
 
@@ -31,7 +36,7 @@ const CreateMessagePage = () => {
     getRecipientId();
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const messageData = {
       team: '2-8',
@@ -43,6 +48,8 @@ const CreateMessagePage = () => {
       font,
     };
     // console.log('data', messageData);
+
+    await createMessage(messageData);
   };
   return (
     <div>
