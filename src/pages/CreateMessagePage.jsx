@@ -10,6 +10,7 @@ import {
   fetchRecipient,
   createMessage,
 } from '../Api/messageApi';
+import Header from '../components/Header';
 
 const CreateMessagePage = () => {
   const [recipientId, setRecipientId] = useState('');
@@ -52,7 +53,8 @@ const CreateMessagePage = () => {
     await createMessage(messageData);
   };
   return (
-    <div>
+    <>
+      <Header />
       <StyledForm onSubmit={handleSubmit}>
         <TextInputSection sender={sender} setSender={setSender}>
           From.
@@ -80,7 +82,7 @@ const CreateMessagePage = () => {
         <StyledButton type="submit">생성하기</StyledButton>
         {/* </Link> */}
       </StyledForm>
-    </div>
+    </>
   );
 };
 

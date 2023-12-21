@@ -24,7 +24,7 @@ const createMessage = async (messageData) => {
   if (!response.ok) {
     throw new Error('메세지를 생성하는 데 실패했습니다.');
   }
-  const body = await response.json;
+  const body = await response.json();
   return body;
 };
 
