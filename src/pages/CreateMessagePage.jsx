@@ -78,9 +78,9 @@ const CreateMessagePage = () => {
         <ToggleDownSection optionType="font" last font={font} setFont={setFont}>
           폰트 선택
         </ToggleDownSection>
-        {/* <Link to="/post/{id}"> */}
-        <StyledButton type="submit">생성하기</StyledButton>
-        {/* </Link> */}
+        <Link to={`/post/${recipientId}`}>
+          <StyledButton type="submit">생성하기</StyledButton>
+        </Link>
       </StyledForm>
     </>
   );
