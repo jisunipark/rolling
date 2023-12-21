@@ -15,7 +15,6 @@ const MainContent = styled.div`
 `;
 
 const Main = ({ isEditMode, data, onClick }) => {
-  console.log(data);
   return (
     <MainContent data={data}>
       <CardListUl isEditMode={isEditMode} data={data} onClick={onClick} />
