@@ -3,9 +3,10 @@ import CardListUl from './CardListUl';
 
 const MainContent = styled.div`
   position: relative;
-  background-color: ${({ Data }) => Data?.backgroundColor || 'transparent'};
-  background-image: ${({ Data }) =>
-    Data?.backgroundColor ? 'none' : `url(${Data?.backgroundImageURL})`};
+  background-image: ${({ data }) =>
+    data?.backgroundColor ? 'none' : `url(${data?.backgroundImageURL})`};
+  background-color: ${({ data }) => data?.backgroundColor || 'transparent'};
+
   width: 100%;
   height: 1080px;
   @media screen and (max-width: 767px) {
@@ -13,10 +14,11 @@ const MainContent = styled.div`
   }
 `;
 
-const Main = ({ Data }) => {
+const Main = ({ isEditMode, data, onClick }) => {
+  console.log(data);
   return (
-    <MainContent Data={Data}>
-      <CardListUl Data={Data} />
+    <MainContent data={data}>
+      <CardListUl isEditMode={isEditMode} data={data} onClick={onClick} />
     </MainContent>
   );
 };

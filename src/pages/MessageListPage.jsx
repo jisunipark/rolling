@@ -1,30 +1,44 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import HeaderUser from './Header/Header_service';
 import Main from './Main/Main';
-// import Mock from '../mock.json';
+// import Data from '../mock.json';
 import Header from '../components/Header';
-import QuestionPersonFetch from '../Api/api';
+import { QuestionPersonFetch } from '../Api/api';
 
 const MessageListPage = () => {
-  const [Data, setData] = useState([]);
+  const navigate = useNavigate();
+  const isEditMode = window.location.pathname.includes('/edit');
+  const [data, setData] = useState(null);
 
-  const pill = async (userid) => {
-    const gyeom = await QuestionPersonFetch(userid);
-    setData(gyeom);
+  const QuestionFetch = async (userid) => {
+    try {
+      const response = await QuestionPersonFetch(userid);
+      setData(response);
+    } catch (error) {
+      console.error('에러발생', error);
+    }
   };
 
   const { id } = useParams();
 
   useEffect(() => {
-    pill(id);
-  }, []);
+    QuestionFetch(id);
+  }, [id]);
 
+  const handleDelete = () => {
+    navigate('/list');
+  };
+
+  // 초기값 로딩창
+  if (data === null) {
+    return <div>로딩중</div>;
+  }
   return (
     <>
       <Header hidden="true" />
-      <HeaderUser />
-      <Main Data={Data} />
+      <HeaderUser data={data} />
+      <Main isEditMode={isEditMode} data={data} onClick={handleDelete} />
     </>
   );
 };

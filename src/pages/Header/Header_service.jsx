@@ -3,7 +3,7 @@ import EmojiPicker from 'emoji-picker-react';
 import ArrowDown from '../../assets/images/arrow_down.png';
 import ArrowAdd from '../../assets/images/add-24.png';
 import Share from '../../assets/images/share-24.png';
-import Data from '../../mock.json';
+// import Data from '../../mock.json';
 import {
   HeaderService,
   HeaderServiceBifurcationA,
@@ -32,18 +32,18 @@ import {
   HeaderServiceMedio,
 } from './MessageListPageCss';
 import URLToast from './URLSave';
-
-const HeaderUser = () => {
+// 파라미터에 Data넣어야함.
+const HeaderUser = ({ data }) => {
+  const { name, messageCount, recentMessages } = data;
   const [emoji, setEmoji] = useState(false);
   const [urlMenu, setUrlMenu] = useState(false);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [urlShare, setUrlShare] = useState(false);
-  // 목데이터들인데 api주소 받으면 변경해서 작성.
-  const { results } = Data;
-  const [{ recentMessages }] = results;
 
-  const { profileImageURL: profileImageURL1 } = recentMessages[0];
-  const { profileImageURL: profileImageURL2 } = recentMessages[1];
+  // const fristImg = recentMessages[0].profileImageURL;
+
+  // const { profileImageURL: profileImageURL1 } = recentMessages[0];
+  // const { profileImageURL: profileImageURL2 } = recentMessages[1];
   const handleShare = () => setUrlMenu(!urlMenu);
 
   const handleEmoji = () => setEmoji(!emoji);
@@ -65,20 +65,20 @@ const HeaderUser = () => {
   return (
     <Testdiv>
       <HeaderService>
-        <HeaderServiceName>To.{results[0].name}</HeaderServiceName>
+        <HeaderServiceName>To.{name}</HeaderServiceName>
         {urlShare && <URLToast />}
         <HeaderServiceMedio>
           <HeaderServiceMoblieFlex>
             <HeaderServiceMans>
-              <HeaderServiceImgA src={profileImageURL1} alt="프로필이미지" />
-              <HeaderServiceImgB src={profileImageURL2} alt="프로필이미지" />
+              {/* <HeaderServiceImgA src={profileImageURL1} alt="프로필이미지" />
+              <HeaderServiceImgB src={profileImageURL2} alt="프로필이미지" /> */}
               {/* -3 해야함. */}
               <HeaderServiceImgC>
-                <p>+{recentMessages.length}</p>
+                {/* <p>+{recentMessages.length}</p> */}
               </HeaderServiceImgC>
               <HeaderServiceMessageDiv>
                 <HeaderServiceMessageCount>
-                  {recentMessages.length}
+                  {/* {recentMessages.length} */}
                 </HeaderServiceMessageCount>
                 <HeaderServiceMessageCountText>
                   명이 작성했어요!

@@ -3,16 +3,20 @@ import CardList from './CardList';
 import CardPlus from './CardPlus';
 import DeleteButton from './DeleteButton';
 
-const CardListUl = ({ Data }) => {
-  const { recentMessages } = Data;
+const CardListUl = ({ isEditMode, data, onClick }) => {
+  const { recentMessages } = data;
+
   return (
     <MainUl>
-      <CardDeletedFlex>
-        <DeleteButton />
-      </CardDeletedFlex>
+      {isEditMode && (
+        <CardDeletedFlex>
+          <DeleteButton onClick={onClick} />
+        </CardDeletedFlex>
+      )}
+
       <CardPlus />
       {recentMessages?.map((item) => {
-        return <CardList key={item.id} item={item} />;
+        return <CardList key={item.id} item={item} isEditMode={isEditMode} />;
       })}
     </MainUl>
   );
