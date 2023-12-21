@@ -14,10 +14,15 @@ const MainContent = styled.div`
   }
 `;
 
-const Main = ({ isEditMode, data, onClick }) => {
+const Main = ({ isEditMode, data, onClick, id }) => {
   return (
     <MainContent data={data}>
-      <CardListUl isEditMode={isEditMode} data={data} onClick={onClick} />
+      <CardListUl
+        isEditMode={isEditMode}
+        data={data}
+        onClick={onClick}
+        id={id}
+      />
     </MainContent>
   );
 };

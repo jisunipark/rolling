@@ -38,7 +38,12 @@ const MessageListPage = () => {
     <>
       <Header hidden="true" />
       <HeaderUser data={data} />
-      <Main isEditMode={isEditMode} data={data} onClick={handleDelete} />
+      <Main
+        isEditMode={isEditMode}
+        data={data}
+        onClick={handleDelete}
+        id={id}
+      />
     </>
   );
 };
