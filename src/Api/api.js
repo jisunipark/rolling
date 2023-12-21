@@ -1,3 +1,4 @@
+
 const BASE_URL = 'https://rolling-api.vercel.app/';
 const BASE_QUERY = '2-8/';
 
@@ -39,22 +40,34 @@ export const MessageDeleteFetch = async (id) => {
   return response;
 };
 
-// {id: 1932
-// {id: 1931,
-// {id: 1929,
-// {id: 1927
-// {id: 1919
-// {id: 1918,
-// {id: 1916
+// 인기 롤링페이퍼
+const getInformationLIke = async () => {
+  try {
+    const response = await fetch(
+      `${BASE_URL}${BASE_QUERY}recipients/?limit=10&sort=like`,
+    );
+    const body = await response.json();
+    return body;
+  } catch (err) {
+    console.log(err.message);
+  }
 
-// export default { QuestionDeleteFetch, QuestionPersonFetch };
+  return;
+};
+// 최근에 만든 롤링페이퍼
+const getInformation = async () => {
+  try {
+    const response = await fetch(
+      `${BASE_URL}${BASE_QUERY}recipients/?limit=10`,
+    );
+    const body = await response.json();
+    return body;
+  } catch (err) {
+    console.log(err.message);
+  }
 
-// GET https://rolling-api.vercel.app/0-3/recipients/2/messages/?limit=3&offset=1
-// ?? 값에 limit만큼의 값 넣기.
-// const MessageListFetch = async (id) => {
-//   const response = await fetch(
-//     `${BASE_URL}${BASE_QUERY}recipients/${id}/messages/?limit=6&offset=${??}`,
-//   );
-//   const result = response.json();
-//   return result;
-// };
+  return;
+};
+
+export { getInformationLIke };
+export { getInformation };
