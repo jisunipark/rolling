@@ -1,7 +1,7 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { StyledSection } from './style';
 
-const TextInputSection = ({ children }) => {
+const TextInputSection = ({ children, sender, setSender }) => {
   const inputRef = useRef();
   const pRef = useRef();
 
@@ -23,6 +23,10 @@ const TextInputSection = ({ children }) => {
     };
   }, []);
 
+  const handleOnChange = (e) => {
+    setSender(e.currentTarget.value);
+  };
+
   return (
     <StyledSection>
       <label htmlFor="sender">{children}</label>
@@ -30,8 +34,11 @@ const TextInputSection = ({ children }) => {
         <input
           type="text"
           id="sender"
+          name="sender"
           placeholder="이름을 입력해 주세요."
           ref={inputRef}
+          value={sender}
+          onChange={handleOnChange}
         />
         <p className="message" ref={pRef}>
           값을 입력해 주세요

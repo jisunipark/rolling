@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { StyledContainer, StyledButton } from '../components/style';
+import { useState } from 'react';
+import { StyledForm, StyledButton } from '../components/style';
 import TextInputSection from '../components/TextInputSection';
 import ProfileImgInputSection from '../components/ProfileImgInputSection';
 import TextareaInputSection from '../components/TextareaInputSection';
@@ -7,22 +8,61 @@ import ToggleDownSection from '../components/ToggleDownSection';
 import { fetchProfileImg } from '../Api/messageApi';
 
 const CreateMessagePage = () => {
+  const [sender, setSender] = useState(''); // 부모
+  // 자식에게 필요한 것들을 부모에서 props로 전달
+  const [profileImageURL, setProfileImageURL] = useState('');
+  const [relationship, setRelationship] = useState('');
+  const [content, setContent] = useState('');
+  const [font, setFont] = useState('');
+
+  // console.log('sender', sender);
+  // console.log('profileImageURL', profileImageURL);
+  // console.log('relationship', relationship);
+  // console.log('content', content);
+  // console.log('font', font);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const messageData = {
+      team: '2-8',
+      recipientId: 0,
+      sender,
+      profileImageURL,
+      relationship,
+      content,
+      font,
+    };
+    // console.log('data', messageData);
+  };
   return (
     <div>
-      <StyledContainer>
-        <TextInputSection>From.</TextInputSection>
-        <ProfileImgInputSection>프로필 이미지</ProfileImgInputSection>
-        <ToggleDownSection optionType="relationship">
+      <StyledForm onSubmit={handleSubmit}>
+        <TextInputSection sender={sender} setSender={setSender}>
+          From.
+        </TextInputSection>
+        <ProfileImgInputSection
+          profileImageURL={profileImageURL}
+          setProfileImageURL={setProfileImageURL}
+        >
+          프로필 이미지
+        </ProfileImgInputSection>
+        <ToggleDownSection
+          optionType="relationship"
+          relationship={relationship}
+          setRelationship={setRelationship}
+        >
           상대와의 관계
         </ToggleDownSection>
-        <TextareaInputSection>내용을 입력해 주세요</TextareaInputSection>
-        <ToggleDownSection optionType="font" last>
+        <TextareaInputSection content={content} setContent={setContent}>
+          내용을 입력해 주세요
+        </TextareaInputSection>
+        <ToggleDownSection optionType="font" last font={font} setFont={setFont}>
           폰트 선택
         </ToggleDownSection>
-      </StyledContainer>
-      <Link to="/post/{id}">
-        <StyledButton>생성하기</StyledButton>
-      </Link>
+        {/* <Link to="/post/{id}"> */}
+        <StyledButton type="submit">생성하기</StyledButton>
+        {/* </Link> */}
+      </StyledForm>
     </div>
   );
 };

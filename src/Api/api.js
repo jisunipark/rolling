@@ -1,4 +1,4 @@
-
+/* eslint-disable no-useless-return */
 const getInformation = async () => {
   try {
     const response = await fetch(
@@ -10,9 +10,8 @@ const getInformation = async () => {
     console.log(err.message);
   }
 
+  // eslint-disable-next-line consistent-return
   return;
 };
 
-export defalut getInformation;
-
-
+export default getInformation;

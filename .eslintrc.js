@@ -33,7 +33,6 @@ module.exports = {
       { namedComponents: 'arrow-function' },
     ],
 
-
     'jsx-a11y/label-has-associated-control': [
       2,
       {
@@ -51,6 +50,5 @@ module.exports = {
     ],
 
     'react/prop-type': 'off',
-
   },
 };

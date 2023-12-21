@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledContainer = styled.div`
+const StyledForm = styled.form`
   margin: 47px auto 62px auto;
   width: 720px;
   background-color: white;
@@ -259,7 +259,7 @@ const ProfileImgInput = styled.div`
 `;
 
 export {
-  StyledContainer,
+  StyledForm,
   StyledButton,
   StyledSection,
   ProfileImgList,

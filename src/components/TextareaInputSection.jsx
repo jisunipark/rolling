@@ -32,16 +32,16 @@ const modules = {
   },
 };
 
-const Editor = ({ initialValue = '' }) => {
-  const [quillValue, setQuillValue] = useState(initialValue);
+const Editor = ({ initialValue = '', content, setContent }) => {
+  // const [quillValue, setQuillValue] = useState(initialValue);
 
   const handleOnChange = (value) => {
-    setQuillValue(value);
+    setContent(value);
   };
 
   return (
     <ReactQuill
-      value={quillValue}
+      value={content}
       theme="snow"
       modules={modules}
       formats={formats}
@@ -49,12 +49,11 @@ const Editor = ({ initialValue = '' }) => {
     />
   );
 };
-
-const TextareaInputSection = ({ children }) => {
+const TextareaInputSection = ({ children, content, setContent }) => {
   return (
     <StyledSection>
       <label htmlFor="content">{children}</label>
-      <Editor />
+      <Editor content={content} setContent={setContent} />
     </StyledSection>
   );
 };

@@ -3,7 +3,15 @@ import { StyledSection } from './style';
 import ToggleArrowDown from '../assets/images/toggle-arrow-down.svg';
 import ToggleArrowUp from '../assets/images/toggle-arrow-up.svg';
 
-const ToggleDownSection = ({ children, optionType, last }) => {
+const ToggleDownSection = ({
+  children,
+  optionType,
+  last,
+  relationship,
+  setRelationship,
+  font,
+  setFont,
+}) => {
   let options = [];
 
   if (optionType === 'relationship') {
@@ -39,6 +47,12 @@ const ToggleDownSection = ({ children, optionType, last }) => {
     setSelected(e.target.textContent);
     // setIsOpen(false);
   };
+
+  if (optionType === 'relationship') {
+    setRelationship(selected);
+  } else if (optionType === 'font') {
+    setFont(selected);
+  }
 
   return (
     <StyledSection last={last}>
