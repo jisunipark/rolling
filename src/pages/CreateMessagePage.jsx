@@ -51,7 +51,12 @@ const CreateMessagePage = () => {
     // console.log('data', messageData);
 
     await createMessage(messageData);
+    console.log(createMessage());
   };
+
+  if (handleSubmit === '') {
+    return <div>하이</div>;
+  }
   return (
     <>
       <Header />

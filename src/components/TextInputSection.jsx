@@ -16,10 +16,10 @@ const TextInputSection = ({ children, sender, setSender }) => {
   };
 
   useEffect(() => {
-    inputRef.current.addEventListener('focusout', showErrorMessage);
+    inputRef.current?.addEventListener('focusout', showErrorMessage);
 
     return () => {
-      inputRef.current.removeEventListener('focusout', showErrorMessage);
+      inputRef.current?.removeEventListener('focusout', showErrorMessage);
     };
   }, []);
 
