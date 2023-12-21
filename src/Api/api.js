@@ -1,4 +1,3 @@
-
 const BASE_URL = 'https://rolling-api.vercel.app/';
 const BASE_QUERY = '2-8/';
 
@@ -55,6 +54,7 @@ const getInformationLIke = async () => {
   return;
 };
 // 최근에 만든 롤링페이퍼
+/* eslint-disable no-useless-return */
 const getInformation = async () => {
   try {
     const response = await fetch(
@@ -66,8 +66,9 @@ const getInformation = async () => {
     console.log(err.message);
   }
 
+  // eslint-disable-next-line consistent-return
   return;
 };
 
-export { getInformationLIke };
-export { getInformation };
+export { getInformationLIke, getInformation };
+
