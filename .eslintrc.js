@@ -32,7 +32,7 @@ module.exports = {
       2,
       { namedComponents: 'arrow-function' },
     ],
-
+    'consistent-return': 'off',
     'jsx-a11y/label-has-associated-control': [
       2,
       {

@@ -1,6 +1,5 @@
 const BASE_URL = 'https://rolling-api.vercel.app/';
 
-// eslint-disable-next-line consistent-return
 export const getDataBackgroundImg = async () => {
   try {
     const response = await fetch(`${BASE_URL}background-images/`);
@@ -12,7 +11,6 @@ export const getDataBackgroundImg = async () => {
   }
 };
 
-// eslint-disable-next-line consistent-return
 export const postUserData = async (sendData) => {
   console.log(sendData);
   try {
