@@ -1,7 +1,6 @@
-<p align="center">
+<h1 align="center">
  <img src="src/assets/images/rolling-logo.png">
-</p>
-<hr/>
+</h1>
 Rolling(롤링)은 추억의 롤링페이퍼를 웹 상에서도 즐길 수 있는 서비스입니다.   
 <br>
 <br>
