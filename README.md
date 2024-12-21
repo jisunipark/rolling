@@ -11,7 +11,7 @@ Rolling(롤링)은 추억의 롤링페이퍼를 웹 상에서도 즐길 수 있�
   <br>
 
 <p align="center">
- <img src="src/assets/images/rolling-landing.png">
+ <img src="src/assets/images/rolling-rounded.png">
 </p>
 
 ## 기술 스택
